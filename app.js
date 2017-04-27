@@ -7,6 +7,10 @@ function configFN($routeProvider) {
             controller: "CloudController",
             templateUrl: "views/cloud.view.html"
         })
+        .when('/home', {
+            controller: "SearchController",
+            templateUrl: "views/cloud.view.html"
+        })
 
     .otherwise({
         redirectTo: '/home'
