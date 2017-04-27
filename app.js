@@ -7,11 +7,16 @@ function configFN($routeProvider) {
             controller: "CloudController",
             templateUrl: "views/home.view.html"
         })
+
+        .when('/home', {
+            controller: "StatsController",
+            templateUrl: "views/home.view.html"
+        })
+
         .when('/product', {
             controller: "CloudController",
             templateUrl: "views/product.view.html"
         })
-    
         .when('/category', {
                 controller: "SearchController",
                 templateUrl: "views/category.view.html"
