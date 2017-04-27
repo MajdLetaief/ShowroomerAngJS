@@ -4,7 +4,7 @@ function SearchControllerFN($scope, $http) {
         $scope.products = response.data;
         console.log($scope.products);
     })
-    
+   
 }
 
 app.controller("SearchController", SearchControllerFN);
