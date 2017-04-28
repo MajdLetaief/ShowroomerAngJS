@@ -13,8 +13,9 @@ function configFN($routeProvider) {
             templateUrl: "views/home.view.html"
         })
 
-        .when('/product', {
-            controller: "CloudController",
+    
+        .when('/product/:productId', {
+            controller: "ProductController",
             templateUrl: "views/product.view.html"
         })
         .when('/category', {
