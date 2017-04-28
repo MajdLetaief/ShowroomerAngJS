@@ -38,7 +38,7 @@
     <link rel="alternate stylesheet" type="text/css" href="css/schemes/scarlet.css" title="scarlet" media="all" />
 </head>
 
-<body>
+<body ng-app="showroomer" ng-controller="SearchController">
     <div class="global-wrapper clearfix" id="global-wrapper">
         <div class="mfp-with-anim mfp-hide mfp-dialog clearfix" id="nav-login-dialog">
             <h3 class="widget-title">Member Login</h3>
@@ -645,8 +645,9 @@
                                         <div class="dropdown-menu-category-section-inner">
                                             <div class="dropdown-menu-category-section-content">
                                                 <h5 class="dropdown-menu-category-title">Pet Supplies</h5>
+                                               
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-4" >
                                                         <ul class="dropdown-menu-category-list">
                                                             <li><a href="#">Backyard Poultry Supplies</a>
                                                                 <p>Adipiscing augue sem molestie dictumst</p>
@@ -895,7 +896,7 @@
                     </ul>
                     <form class="navbar-form navbar-left navbar-main-search" role="search">
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Search the Entire Store..." />
+                            <input class="form-control" type="text" placeholder="Search the Entire Store..." ng-model="search"/>
                         </div>
                         <a class="fa fa-search navbar-main-search-submit" href="#"></a>
                     </form>
@@ -1007,9 +1008,16 @@
                 <div class="col-md-3">
                     <aside class="category-filters">
                         <div class="category-filters-section">
+                          <h3 class="widget-title-sm">Search</h3>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Search the Entire Store..." ng-model="search"/>
+                        </div>
+                        </div>
+                    
+                        <div class="category-filters-section">
                             <h3 class="widget-title-sm">Category</h3>
                             <ul class="cateogry-filters-list">
-                                <li><a href="#">Man's Shoes</a>
+                                <li><a href="#">{{p.category}}</a>
                                 </li>
                                 <li><a href="#">Unisex Clothes, Shoes &amp; Accs</a>
                                 </li>
@@ -1167,10 +1175,10 @@
                 </div>
                 <div class="col-md-9">
                     <div class="row" data-gutter="15">
-                        <div class="col-md-4">
+                        <div class="col-md-4" ng-repeat="p in products | filter : search" >
                             <div class="product ">
                                 <ul class="product-labels">
-                                    <li>-10%</li>
+                                    <li>{{p.discount}}%</li>
                                 </ul>
                                 <div class="product-img-wrap">
                                     <img class="product-img-primary" src="img/test_product/woman_running_shoes/2.jpg" alt="Image Alternative text" title="Image Title" />
@@ -1190,8 +1198,9 @@
                                         <li><i class="fa fa-star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="product-caption-title">ASICS Women's GEL-Equation 7 Running Shoes T3F6N</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-old">$149</span><span class="product-caption-price-new">$135</span>
+                                    <h5 class="product-caption-title">{{p.name}}</h5>
+                                    <div class="product-caption-price"><span class="product-caption-price-old">{{p.price}} DT </span>
+                                        <span class="product-caption-price-new">{{p.price - ((p.discount * p.price) /100) }} DT</span>
                                     </div>
                                     <ul class="product-caption-feature-list">
                                         <li>Free Shipping</li>
@@ -1199,357 +1208,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels"></ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/5.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/5-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">PUMA Faas 700 v2 Women's Running Shoes</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-new">$116</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        
+                
+                    <div class="row" data-gutter="15">
+                       
+                        
                         </div>
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels"></ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/3.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/3-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">PUMA Cell Riaze Mesh Women's Running Shoes</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-new">$104</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>2 left</li>
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="row" data-gutter="15">
+                       
                     </div>
                     <div class="row" data-gutter="15">
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels">
-                                    <li>-10%</li>
-                                </ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/1.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/1-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">ASICS Women's 2015 LAM 33-DFA Running Shoes T55AQ</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-old">$61</span><span class="product-caption-price-new">$55</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels">
-                                    <li>stuff pick</li>
-                                </ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/4.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/4-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">ASICS Women's Gel-Noosa Tri 9 Running Shoe Black/Neon Coral/Green</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-new">$98</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels">
-                                    <li>-70%</li>
-                                    <li>hot</li>
-                                </ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/6.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/6-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">Mizuno Wave Universe 5 Women's Running Shoes Sneakers</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-old">$93</span><span class="product-caption-price-new">$28</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" data-gutter="15">
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels"></ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/1.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/1-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">ASICS Women's 2015 LAM 33-DFA Running Shoes T55AQ</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-new">$97</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>3 left</li>
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels">
-                                    <li>hot</li>
-                                </ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/2.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/2-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">ASICS Women's GEL-Equation 7 Running Shoes T3F6N</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-new">$87</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels"></ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/3.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/3-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">PUMA Cell Riaze Mesh Women's Running Shoes</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-new">$51</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" data-gutter="15">
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels">
-                                    <li>hot</li>
-                                </ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/4.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/4-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">ASICS Women's Gel-Noosa Tri 9 Running Shoe Black/Neon Coral/Green</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-new">$53</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>3 left</li>
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels"></ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/5.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/5-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">PUMA Faas 700 v2 Women's Running Shoes</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-new">$150</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>2 left</li>
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="product ">
-                                <ul class="product-labels"></ul>
-                                <div class="product-img-wrap">
-                                    <img class="product-img-primary" src="img/test_product/woman_running_shoes/6.jpg" alt="Image Alternative text" title="Image Title" />
-                                    <img class="product-img-alt" src="img/test_product/woman_running_shoes/6-a.jpg" alt="Image Alternative text" title="Image Title" />
-                                </div>
-                                <a class="product-link" href="#"></a>
-                                <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="product-caption-title">Mizuno Wave Universe 5 Women's Running Shoes Sneakers</h5>
-                                    <div class="product-caption-price"><span class="product-caption-price-new">$63</span>
-                                    </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>Free Shipping</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                     
                     </div>
                     <div class="row">
                         <div class="col-md-6">
