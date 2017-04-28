@@ -5,8 +5,8 @@ function SearchControllerFN($scope, $http) {
         console.log($scope.products);
     })
     $scope.slider = {
-    minValue: 10,
-    maxValue: 90,
+    minValue: 0,
+    maxValue: 900,
     options: {
         floor: 0,
         ceil: 100,

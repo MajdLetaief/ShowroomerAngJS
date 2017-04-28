@@ -1008,14 +1008,15 @@
                 <div class="col-md-3">
                     <aside class="category-filters">
                         <div class="category-filters-section">
-                          <h3 class="widget-title-sm">Search</h3>
+                          <h3 class="widget-title-sm">Search in this category</h3>
+                            <br>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Search the Entire Store..." ng-model="search"/>
+                            <input class="form-control" type="text" placeholder="Type category ..." ng-model="search"/>
                         </div>
                         </div>
                     
                         <div class="category-filters-section">
-                            <h3 class="widget-title-sm">Category</h3>
+                            <h3 class="widget-title-sm">Other categories</h3>
                             <ul class="cateogry-filters-list">
                                 
                                 <li><a href="#">Unisex Clothes, Shoes &amp; Accs</a>
@@ -1039,13 +1040,13 @@
                         <div class="category-filters-section">
                             <h3 class="widget-title-sm">Price</h3>
                             <input type="text" id="price-slider"  />
-                            <rzslider   rz-slider-model="slider.minValue"
+                            <rzslider   rz-slider-model={{slider.minValue}}
                                         rz-slider-high="slider.maxValue"
                                         rz-slider-options="slider.options">
                             </rzslider>
                         </div>
                         <div class="category-filters-section">
-                            <h3 class="widget-title-sm">Shoe Size</h3>
+                            <h3 class="widget-title-sm">Gendre</h3>
                             <div class="checkbox">
                                 <label>
                                     <input class="i-check" type="checkbox" />6.5<span class="category-filters-amount">(26)</span>
@@ -1078,28 +1079,10 @@
                             </div>
                         </div>
                         <div class="category-filters-section">
-                            <h3 class="widget-title-sm">Relese Date</h3>
-                            <div class="checkbox">
-                                <label>
-                                    <input class="i-check" type="checkbox" />Last 30 days<span class="category-filters-amount">(52)</span>
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input class="i-check" type="checkbox" />Last 90 days<span class="category-filters-amount">(22)</span>
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input class="i-check" type="checkbox" />Comming Soon<span class="category-filters-amount">(80)</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="category-filters-section">
                             <h3 class="widget-title-sm">Brand</h3>
                             <div class="checkbox">
                                 <label>
-                                    <input class="i-check" type="checkbox" />Adidas<span class="category-filters-amount">(50)</span>
+                                    <input class="i-check" type="checkbox" />ZARA<span class="category-filters-amount">(50)</span>
                                 </label>
                             </div>
                             <div class="checkbox">
@@ -1156,24 +1139,6 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="category-filters-section">
-                            <h3 class="widget-title-sm">Features</h3>
-                            <div class="checkbox">
-                                <label>
-                                    <input class="i-check" type="checkbox" />New<span class="category-filters-amount">(96)</span>
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input class="i-check" type="checkbox" />Featured<span class="category-filters-amount">(16)</span>
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input class="i-check" type="checkbox" />On Sale<span class="category-filters-amount">(60)</span>
-                                </label>
-                            </div>
-                        </div>
                     </aside>
                 </div>
                 <div class="col-md-9">
@@ -1189,25 +1154,11 @@
                                 </div>
                                 <a class="product-link" href="index.html#/product/{{p.productId}}"></a>
                                 <div class="product-caption">
-                                    <ul class="product-caption-rating">
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li class="rated"><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                        <li><i class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
                                     <h5 class="product-caption-title">{{p.name}}</h5>
                                     <div class="product-caption-price"><span class="product-caption-price-old">{{p.price}} DT </span>
                                         <span class="product-caption-price-new">{{p.price - ((p.discount * p.price) /100) }} DT</span>
                                     </div>
-                                    <ul class="product-caption-feature-list">
-                                        <li>Free Shipping</li>
-                                    </ul>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -1367,6 +1318,7 @@
     <script src="js/owl-carousel.js"></script>
     <script src="js/magnific.js"></script>
     <script src="js/custom.js"></script>
+    <script src="controller/search.controller.js"></script>
 
 
     <script src="js/switcher.js"></script>
