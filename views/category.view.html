@@ -1017,8 +1017,7 @@
                         <div class="category-filters-section">
                             <h3 class="widget-title-sm">Category</h3>
                             <ul class="cateogry-filters-list">
-                                <li><a href="#">{{p.category}}</a>
-                                </li>
+                                
                                 <li><a href="#">Unisex Clothes, Shoes &amp; Accs</a>
                                 </li>
                                 <li><a href="#">Kids Clothes, Shoes &amp; Accs</a>
@@ -1039,7 +1038,11 @@
                         </div>
                         <div class="category-filters-section">
                             <h3 class="widget-title-sm">Price</h3>
-                            <input type="text" id="price-slider" />
+                            <input type="text" id="price-slider"  />
+                            <rzslider   rz-slider-model="slider.minValue"
+                                        rz-slider-high="slider.maxValue"
+                                        rz-slider-options="slider.options">
+                            </rzslider>
                         </div>
                         <div class="category-filters-section">
                             <h3 class="widget-title-sm">Shoe Size</h3>
