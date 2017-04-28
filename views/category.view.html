@@ -896,10 +896,28 @@
                     </ul>
                     <form class="navbar-form navbar-left navbar-main-search" role="search">
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Search the Entire Store..." ng-model="search"/>
+                            <input class="form-control" type="text" placeholder="Search the Entire Store..." ng-model="searchglobal"/>
                         </div>
                         <a class="fa fa-search navbar-main-search-submit" href="#"></a>
+                        <div>
+                        <div class="dropdown">  
+                          <ul class="dropdown">
+                                <li ng-repeat="p in products | filter : searchglobal " ng-show="searchglobal">
+                                    <a class="dropdown-menu-shipping-cart-img" href="index.html#/product/{{p.productId}}">
+                                        <img src="img/cart/1.jpg" alt="Image Alternative text" title="Image Title" />
+                                    </a>
+                                    <div class="dropdown-menu-shipping-cart-inner">
+                                        
+                                        <p class="dropdown-menu-shipping-cart-price"><a href="index.html#/product/{{p.productId}}">{{p.name}}</a>
+                                        </p>
+                                        <p class="dropdown-menu-shipping-cart-item">{{p.price}}</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                            </div>
                     </form>
+                    
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#nav-login-dialog" data-effect="mfp-move-from-top" class="popup-text">Sign In</a>
                         </li>
@@ -957,8 +975,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-
+        </nav>     
         <header class="page-header page-header-banner" style="background-image:url(img/shoes-woman-girl-sport-jogging_1400x220.jpg);">
             <div class="container">
                 <div class="page-header-banner-inner">
