@@ -142,7 +142,7 @@
             </ul>
             <div class="banner" style="background-color:#F5D02B;">
                 <a class="banner-link" href="#"></a>
-                <div class="banner-caption-top-left">
+                <div class="banner-caption-bottom-left">
                     <h5 class="banner-title">{{x.name}}</h5>
                     <p class="banner-desc">{{x.brand}}</p>
                     <p class="product-caption-price-new">{{x.price}}</p>
@@ -223,9 +223,9 @@
 <div class="container">
     <div class="gap gap-small"></div>
     <h3 class="widget-title-lg">Other products</h3>
-    <div class="row" data-gutter="15">
-        <div class="col-md-3">
-            <div class="product ">
+    <div class="row" data-gutter="15" >
+        <div class="col-md-3" ng-repeat="x in productsBestOffer">
+            <div class="product " >
                 <ul class="product-labels"></ul>
                 <div class="product-img-wrap">
                     <img class="product-img-primary" src=img/test_product/34.jpg alt="Image Alternative text" title="Image Title" />
@@ -250,262 +250,16 @@
                             <i class="fa fa-star"></i>
                         </li>
                     </ul>
-                    <h5 class="product-caption-title">Samsung Galaxy Note 4 IV 4G FACTORY UNLOCKED Black or White</h5>
+                    <h5 class="product-caption-title">{{x.name}}</h5>
                     <div class="product-caption-price">
-                        <span class="product-caption-price-new">$98</span>
+                        <span class="product-caption-price-new">${{x.price}}</span>
                     </div>
-                
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product ">
-                <ul class="product-labels"></ul>
-                <div class="product-img-wrap">
-                    <img class="product-img-primary" src=img/test_product/cameras/1.jpg alt="Image Alternative text" title="Image Title" />
-                    <img class="product-img-alt" src=img/test_product/cameras/1-a.jpg alt="Image Alternative text" title="Image Title" />
-                </div>
-                <a class="product-link" href="#"></a>
-                <div class="product-caption">
-                    <ul class="product-caption-rating">
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                    </ul>
-                    <h5 class="product-caption-title">Nikon D5200 24.1 MP Digital SLR Camera - Black (Kit w/ 18-55 VR Lens)</h5>
-                    <div class="product-caption-price">
-                        <span class="product-caption-price-new">$68</span>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product ">
-                <ul class="product-labels"></ul>
-                <div class="product-img-wrap">
-                    <img class="product-img-primary" src=img/test_product/laptops/3.jpg alt="Image Alternative text" title="Image Title" />
-                    <img class="product-img-alt" src=img/test_product/laptops/3-a.jpg alt="Image Alternative text" title="Image Title" />
-                </div>
-                <a class="product-link" href="#"></a>
-                <div class="product-caption">
-                    <ul class="product-caption-rating">
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                    </ul>
-                    <h5 class="product-caption-title">Apple 11.6" MacBook Air Notebook Computer MJVM2LL/A (Early 2015)</h5>
-                    <div class="product-caption-price">
-                        <span class="product-caption-price-new">$145</span>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product ">
-                <ul class="product-labels">
-                    <li>-30%</li>
-                    <li>hot</li>
-                </ul>
-                <div class="product-img-wrap">
-                    <img class="product-img-primary" src=img/test_product/cameras/3.jpg alt="Image Alternative text" title="Image Title" />
-                    <img class="product-img-alt" src=img/test_product/cameras/3-a.jpg alt="Image Alternative text" title="Image Title" />
-                </div>
-                <a class="product-link" href="#"></a>
-                <div class="product-caption">
-                    <ul class="product-caption-rating">
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                    </ul>
-                    <h5 class="product-caption-title">Nikon COOLPIX L840 Digital Camera, Red - Refurbished by Nikon U.S.A. #26486 B</h5>
-                    <div class="product-caption-price">
-                        <span class="product-caption-price-old">$95</span><span class="product-caption-price-new">$67</span>
-                    </div>
-                    
                 </div>
             </div>
         </div>
     </div>
-    <div class="row" data-gutter="15">
-        <div class="col-md-3">
-            <div class="product ">
-                <ul class="product-labels"></ul>
-                <div class="product-img-wrap">
-                    <img class="product-img-primary" src=img/test_product/29.jpg alt="Image Alternative text" title="Image Title" />
-                    <img class="product-img-alt" src=img/test_product/29-a.jpg alt="Image Alternative text" title="Image Title" />
-                </div>
-                <a class="product-link" href="#"></a>
-                <div class="product-caption">
-                    <ul class="product-caption-rating">
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                    </ul>
-                    <h5 class="product-caption-title">Apple iPhone 5s 16GB Factory Unlocked Smartphone Space Gray / Silver / Gold</h5>
-                    <div class="product-caption-price">
-                        <span class="product-caption-price-new">$59</span>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product ">
-                
-                <div class="product-img-wrap">
-                    <img class="product-img-primary" src=img/test_product/35.jpg alt="Image Alternative text" title="Image Title" />
-                    <img class="product-img-alt" src=img/test_product/35-a.jpg alt="Image Alternative text" title="Image Title" />
-                </div>
-                <a class="product-link" href="#"></a>
-                <div class="product-caption">
-                    <ul class="product-caption-rating">
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                    </ul>
-                    <h5 class="product-caption-title">LG G3 VS985 - 32GB - Verizon Smartphone - Metallic Black or Silk White - Great</h5>
-                    <div class="product-caption-price">
-                        <span class="product-caption-price-new">$96</span>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product ">
-                
-                <div class="product-img-wrap">
-                    <img class="product-img-primary" src=img/test_product/32.jpg alt="Image Alternative text" title="Image Title" />
-                    <img class="product-img-alt" src=img/test_product/32-a.jpg alt="Image Alternative text" title="Image Title" />
-                </div>
-                <a class="product-link" href="#"></a>
-                <div class="product-caption">
-                    <ul class="product-caption-rating">
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                    </ul>
-                    <h5 class="product-caption-title">LG G Flex D959 - 32GB - Titan Silver GSM Unlocked Android Smartphone (B)</h5>
-                    <div class="product-caption-price">
-                        <span class="product-caption-price-new">$70</span>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product ">
-                <ul class="product-labels"></ul>
-                <div class="product-img-wrap">
-                    <img class="product-img-primary" src=img/test_product/laptops/1.jpg alt="Image Alternative text" title="Image Title" />
-                    <img class="product-img-alt" src=img/test_product/laptops/1-a.jpg alt="Image Alternative text" title="Image Title" />
-                </div>
-                <a class="product-link" href="#"></a>
-                <div class="product-caption">
-                    <ul class="product-caption-rating">
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                        </li>
-                    </ul>
-                    <h5 class="product-caption-title">HP EliteBook 8460p 2.7GHz i7 8GB 160GB DVD Win 7 Pro 64 Laptop Computer CAM B</h5>
-                    <div class="product-caption-price">
-                        <span class="product-caption-price-new">$53</span>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
-  
-    <hr> <div class="gap gap-small"></div>
+ <hr> <div class="gap gap-small"></div>
  <div class="container">
         <h3 class="widget-title-lg">Shop by Category</h3>
         <div ng-app="showroomer" ng-controller="SearchController">
