@@ -897,7 +897,53 @@
                         <div class="form-group" >
                             <input class="form-control" type="text" placeholder="Search the Entire Store..." />
                         </div>
-                        <a class="fa fa-search navbar-main-search-submit" href="#"></a>
+                        <a class="fa fa-shopping-cart" href="shopping-cart.html"></a>
+                            <ul class="dropdown-menu dropdown-menu-shipping-cart">
+                                <li>
+                                    <a class="dropdown-menu-shipping-cart-img" href="#">
+                                        <img src="img/cart/1.jpg" alt="Image Alternative text" title="Image Title" />
+                                    </a>
+                                    <div class="dropdown-menu-shipping-cart-inner">
+                                        <p class="dropdown-menu-shipping-cart-price">$60</p>
+                                        <p class="dropdown-menu-shipping-cart-item"><a href="#">Gucci Patent Leather Open Toe Platform</a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-menu-shipping-cart-img" href="#">
+                                        <img src="img/cart/2.jpg" alt="Image Alternative text" title="Image Title" />
+                                    </a>
+                                    <div class="dropdown-menu-shipping-cart-inner">
+                                        <p class="dropdown-menu-shipping-cart-price">$77</p>
+                                        <p class="dropdown-menu-shipping-cart-item"><a href="#">Nikon D5200 24.1 MP Digital SLR Camera</a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-menu-shipping-cart-img" href="#">
+                                        <img src="img/cart/3.jpg" alt="Image Alternative text" title="Image Title" />
+                                    </a>
+                                    <div class="dropdown-menu-shipping-cart-inner">
+                                        <p class="dropdown-menu-shipping-cart-price">$85</p>
+                                        <p class="dropdown-menu-shipping-cart-item"><a href="#">Apple 11.6" MacBook Air Notebook </a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-menu-shipping-cart-img" href="#">
+                                        <img src="img/cart/4.jpg" alt="Image Alternative text" title="Image Title" />
+                                    </a>
+                                    <div class="dropdown-menu-shipping-cart-inner">
+                                        <p class="dropdown-menu-shipping-cart-price">$60</p>
+                                        <p class="dropdown-menu-shipping-cart-item"><a href="#">Fossil Women's Original Boyfriend</a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="dropdown-menu-shipping-cart-total">Total: $150</p>
+                                    <button class="dropdown-menu-shipping-cart-checkout btn btn-primary">Checkout</button>
+                                </li>
+                            </ul>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#nav-login-dialog" data-effect="mfp-move-from-top" class="popup-text">Sign In</a>
@@ -960,22 +1006,12 @@
 
         <div class="container">
             <header class="page-header">
-                <h1 class="page-title">Sony XPERIA Z Ultra 16GB</h1>
-                <ol class="breadcrumb page-breadcrumb">
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Electronics</a>
-                    </li>
-                    <li><a href="#">Cell Phones</a>
-                    </li>
-                    <li><a href="#">Sony</a>
-                    </li>
-                    <li class="active">XPERIA Z Ultra 16GB</li>
-                </ol>
+                <h1 class="page-title" style="">{{products.name}}</h1>
             </header>
             <div class="row">
                 <div class="col-md-5">
                     <div class="product-page-product-wrap jqzoom-stage">
+                        
                         <div class="clearfix">
                             <a href="img/test_product_page/xperia/1-b.jpg" id="jqzoom" data-rel="gal-1">
                                 <img src="img/test_product_page/xperia/1.jpg" alt="Image Alternative text" title="Image Title" />
@@ -987,6 +1023,10 @@
                             <a class="zoomThumbActive" href="javascript:void(0)" data-rel="{gallery:'gal-1', smallimage: 'img/test_product_page/xperia/1.jpg', largeimage: 'img/test_product_page/xperia/1-b.jpg'}">
                                 <img src="img/test_product_page/xperia/1-s.jpg" alt="Image Alternative text" title="Image Title" />
                             </a>
+                            <ul class="product-labels">
+                                    <li>{{products.discount}}%</li>
+                                </ul>
+
                         </li>
                         <li>
                             <a href="javascript:void(0)" data-rel="{gallery:'gal-1', smallimage: 'img/test_product_page/xperia/2.jpg', largeimage: 'img/test_product_page/xperia/2-b.jpg'}">
@@ -1009,59 +1049,30 @@
                     <div class="row" data-gutter="10">
                         <div class="col-md-8">
                             <div class="box">
-                                <ul class="product-page-product-rating">
-                                    <li class="rated"><i class="fa fa-star"></i>
-                                    </li>
-                                    <li class="rated"><i class="fa fa-star"></i>
-                                    </li>
-                                    <li class="rated"><i class="fa fa-star"></i>
-                                    </li>
-                                    <li class="rated"><i class="fa fa-star"></i>
-                                    </li>
-                                    <li class="rated"><i class="fa fa-star"></i>
-                                    </li>
-                                </ul>
-                                <p class="product-page-product-rating-sign"><a href="#">238 customer reviews</a>
-                                </p>
                                 <p class="product-page-desc">The first Android smartphone with a 6.4” Full HD Display and the first one ever to incorporate a TRILUMINOS™ Display with X-Reality for mobile – Xperia Z Ultra is the smartphone that takes you beyond your wildest dreams.</p>
                                 <table
                                 class="table table-striped product-page-features-table">
                                     <tbody>
                                         <tr>
-                                            <td>Display:</td>
-                                            <td>6.4 inches</td>
+                                            <td>Category :</td>
+                                            <td>{{products.category}}</td>
                                         </tr>
                                         <tr>
-                                            <td>Camera:</td>
-                                            <td>8.0MP</td>
+                                            <td>Brand :</td>
+                                            <td>{{products.brand}}</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>Available quantity :</td>
+                                            <td>{{products.quantity}}</td>
                                         </tr>
                                         <tr>
-                                            <td>Cellular Band:</td>
-                                            <td>GSM/GPRS/EDGE 850/900/1800/1900 (Quadband) UMTS/HSPA+ 850/900/1700/1900/2100</td>
+                                            <td>Discount :</td>
+                                            <td>{{products.discount}}</td>
                                         </tr>
                                         <tr>
-                                            <td>Contract:</td>
-                                            <td>Without Contract</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Color:</td>
-                                            <td>Black</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Brand:</td>
-                                            <td>Sony</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Features:</td>
-                                            <td>3G Data Capable, 4G Data Capable, Internet Browser, Wi-Fi Capable, GPS, Touchscreen, Music Player, Bluetooth Enabled</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Network:</td>
-                                            <td>Unlocked</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Storage:</td>
-                                            <td>16GB</td>
+                                            <td>TVA :</td>
+                                            <td>{{products.tva}}</td>
                                         </tr>
                                     </tbody>
                                     </table>
@@ -1069,9 +1080,8 @@
                         </div>
                         <div class="col-md-4">
                             <div class="box-highlight">
-                                <p class="product-page-price-list">$498</p>
-                                <p class="product-page-price">$199.99</p>
-                                <p class="text-muted text-sm text-uppercase">Free Shipping</p><a class="btn btn-block btn-primary" href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a><a class="btn btn-block btn-default" href="#"><i class="fa fa-star"></i>Wishlist</a>
+                                <p class="product-page-price">{{products.price}}DT</p>
+                                <p class="text-muted text-sm text-uppercase">Free Shipping</p><a class="btn btn-block btn-primary" href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
                                 <div class="product-page-side-section">
                                     <h5 class="product-page-side-title">Share This Item</h5>
                                     <ul class="product-page-share-item">
