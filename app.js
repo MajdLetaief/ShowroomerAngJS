@@ -7,13 +7,10 @@ function configFN($routeProvider) {
             controller: "CloudController",
             templateUrl: "views/home.view.html"
         })
-
         .when('/home', {
             controller: "StatsController",
             templateUrl: "views/home.view.html"
         })
-
-    
         .when('/product/:productId', {
             controller: "ProductController",
             templateUrl: "views/product.view.html"
@@ -22,8 +19,6 @@ function configFN($routeProvider) {
                 controller: "SearchController",
                 templateUrl: "views/category.view.html"
             })
-
-
     .otherwise({
         redirectTo: '/home'
     });
