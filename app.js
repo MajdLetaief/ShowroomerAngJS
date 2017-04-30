@@ -1,4 +1,4 @@
-angular.module("showroomer", ["ngRoute", "ngResource"]);
+angular.module("showroomer", ["ngRoute", "ngResource","ngMap"]);
 var app = angular.module("showroomer");
 
 function configFN($routeProvider) {
@@ -12,8 +12,7 @@ function configFN($routeProvider) {
             controller: "StatsController",
             templateUrl: "views/home.view.html"
         })
-
-    
+  
         .when('/product/:productId', {
             controller: "ProductController",
             templateUrl: "views/product.view.html"
