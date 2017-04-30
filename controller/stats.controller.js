@@ -1,8 +1,9 @@
 function StatsFunctions($scope, $http) {
-    $scope.productsMostQuantity = [];
-    $http.get("https://mylabsing.mybluemix.net/api/stats/ProductsByMostQuantity").then(function (response) {
+        $scope.productsMostQuantity = [];
+        $http.get("https://mylabsing.mybluemix.net/api/stats/ProductsByMostQuantity").then(function (response) {
         $scope.productsMostQuantity = response.data;
-        console.log($scope.productsMostQuantity);
+        console.log($scope.productsMostQuantity);})
+
         $scope.productsBestOffer = [];
         $http.get("http://mylabsing.mybluemix.net/api/stats/ProductBestOffer").then(function (response) {
             $scope.productsBestOffer = response.data;
@@ -13,18 +14,15 @@ function StatsFunctions($scope, $http) {
             $scope.sumOfRates = response.data;
             console.log($scope.sumOfRates);
         })
-        $scope.averageRate = [];
-        $http.get("http://mylabsing.mybluemix.net/api/stats/averageRate").then(function (response) {
-            $scope.averageRate = response.data;
-            console.log($scope.averageRate);
-        })
         $scope.sumOfRatesPerUser = [];
         $http.get("http://mylabsing.mybluemix.net/api/stats/sumOfRatesPerUser").then(function (response) {
             $scope.sumOfRatesPerUser = response.data;
             console.log($scope.sumOfRatesPerUser);
         })
         $scope.sumOfRatesPerProduct = [];
-        $http.get("http://mylabsing.mybluemix.net/api/stats/sumOfRatesPerProduct").then(function (response) {
+        $http.get("http://mylabsing.mybluemix.net/api/stats/sumOfRatesPerProduct",{headers
+            :{"id" : $scope.productId}
+        }).then(function (response) {
             $scope.sumOfRatesPerProduct = response.data;
             console.log($scope.sumOfRatesPerProduct);
         })
@@ -53,7 +51,20 @@ function StatsFunctions($scope, $http) {
             $scope.SumOfPurchases = response.data;
             console.log($scope.SumOfPurchases);
         })
+        $scope.allProduct = [];
+        $http.get("http://showroomercore.mybluemix.net/api/product/getall")
+            .then(function (response) {
+            $scope.allProduct = response.data;
+            console.log($scope.allProduct);
+        })
+        $scope.averageRate = [];
+        $http.get("http://mylabsing.mybluemix.net/api/stats/averageRate"
+            ,{headers:{
+                    "id" : $scope.productId}
+        }).then(function (response) {
+        $scope.averageRate = response.data;
+        console.log($scope.averageRate);
+        })
 
-    })
 }
 app.controller("StatsController",StatsFunctions);
