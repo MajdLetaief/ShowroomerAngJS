@@ -1,4 +1,4 @@
-angular.module("showroomer", ["ngRoute", "ngResource"]);
+angular.module("showroomer", ["ngRoute", "ngResource",'ngMaterial', 'ngMessages', 'material.svgAssetsCache','rzModule']);
 var app = angular.module("showroomer");
 
 function configFN($routeProvider) {
