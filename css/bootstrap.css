@@ -31,10 +31,20 @@ summary {
 audio,
 canvas,
 progress,
+
+
 video {
-  display: inline-block;
-  vertical-align: baseline;
+	display: block;
+  	vertical-align: baseline;
+	width: 50%;
+	margin: 0 auto; 
+	
 }
+
+video::-webkit-media-controls {
+    display:none !important;
+}
+
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -6581,4 +6591,6 @@ button.close {
     display: none !important;
   }
 }
+
+
 /*# sourceMappingURL=bootstrap.css.map */
