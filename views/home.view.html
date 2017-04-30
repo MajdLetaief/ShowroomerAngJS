@@ -1,5 +1,4 @@
-<script src="js/jquery.js">
-</script>
+<script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/icheck.js"></script>
 <script src="js/ionrangeslider.js"></script>
@@ -8,85 +7,10 @@
 <script src="js/owl-carousel.js"></script>
 <script src="js/magnific.js"></script>
 <script src="js/custom.js"></script>
-<div class="global-wrapper clearfix" id="global-wrapper">
-    
-        <ng-include src="'./views/layouts/nav.view.html'"></ng-include>
+
+<div class="global-wrapper clearfix" id="global-wrapper">   
+    <ng-include src="'./views/layouts/nav.view.html'"></ng-include>
         
-        
-    
-    <div class="mfp-with-anim mfp-hide mfp-dialog clearfix" id="nav-login-dialog">
-        <h3 class="widget-title">Member Login</h3>
-        <p>Welcome back, friend. Login to get started</p>
-        <hr />
-        <form>
-            <div class="form-group">
-                <label>Email or Username</label>
-                <input class="form-control" type="text" />
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input class="form-control" type="text" />
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input class="i-check" type="checkbox" />Remeber Me</label>
-            </div>
-            <input class="btn btn-primary" type="submit" value="Sign In" />
-        </form>
-        <div class="gap gap-small"></div>
-        <ul class="list-inline">
-            <li><a href="#nav-account-dialog" class="popup-text">Not Member Yet</a>
-            </li>
-            <li><a href="#nav-pwd-dialog" class="popup-text">Forgot Password?</a>
-            </li>
-        </ul>
-    </div>
-    <div class="mfp-with-anim mfp-hide mfp-dialog clearfix" id="nav-account-dialog">
-        <h3 class="widget-title">Create TheBox Account</h3>
-        <p>Ready to get best offers? Let's get started!</p>
-        <hr />
-        <form>
-            <div class="form-group">
-                <label>Email</label>
-                <input class="form-control" type="text" />
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input class="form-control" type="text" />
-            </div>
-            <div class="form-group">
-                <label>Repeat Password</label>
-                <input class="form-control" type="text" />
-            </div>
-            <div class="form-group">
-                <label>Phone Number</label>
-                <input class="form-control" type="text" />
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input class="i-check" type="checkbox" />Subscribe to the Newsletter</label>
-            </div>
-            <input class="btn btn-primary" type="submit" value="Create Account" />
-        </form>
-        <div class="gap gap-small"></div>
-        <ul class="list-inline">
-            <li><a href="#nav-login-dialog" class="popup-text">Already Memeber</a>
-            </li>
-        </ul>
-    </div>
-    <div class="mfp-with-anim mfp-hide mfp-dialog clearfix" id="nav-pwd-dialog">
-        <h3 class="widget-title">Password Recovery</h3>
-        <p>Enter Your Email and We Will Send the Instructions</p>
-        <hr />
-        <form>
-            <div class="form-group">
-                <label>Your Email</label>
-                <input class="form-control" type="text" />
-            </div>
-            <input class="btn btn-primary" type="submit" value="Recover Password" />
-        </form>
-    </div>
-    
     <div class="owl-carousel owl-loaded owl-nav-dots-inner" data-options='{"items":1,"loop":true}'>
         <div class="owl-item">
             <div class="slider-item" style="background-color:#252525;">
@@ -130,262 +54,432 @@
                 </div>
             </div>
         </div>
+    </div> 
+    <div class="container">
+        <div class="gap gap-small"></div>
+        <h3 class="widget-title-lg">Best Offer Products </h3>
+        <div class="row" data-gutter="15">
+            <div class="col-md-4" ng-repeat="x in productsBestOffer |limitTo:1">
+                <ul class="product-labels">
+                    <li>-%{{x.discount}} </li>
+                </ul>
+                <div class="banner" style="background-color:#F5D02B;">
+                    <a class="banner-link" href="index.html#/product/{{x.productId}}"></a>
+                    <div class="banner-caption-bottom-left">
+                        <h5 class="banner-title">{{x.name}}</h5>
+                        <p class="banner-desc">{{x.brand}}</p>
+                        <div class="product-caption-price"><span class="product-caption-price-old">{{x.price}} DT </span>
+                            <span class="product-caption-price-new">{{x.price - ((x.discount * x.price) /100) }} DT</span>
+                        </div>
+
+                    </div>
+                    <img class="banner-img" src=img/test_banner/1.png alt="Image Alternative text" title="Image Title" style="bottom: -8px; right: -32px;" />
+                </div>
+            </div>
+            
+            <div class="col-md-4"ng-repeat="x in productsBestOffer |limitTo:1:1">
+                <ul class="product-labels">
+                    <li>-%{{x.discount}} </li>
+                </ul>
+                <div class="banner" style="background-color:#252525;">
+                    <a class="banner-link" href="index.html#/product/{{x.productId}}"></a>
+                    <div class="banner-caption-top-right">
+                        <h5 class="banner-title">{{x.name}}</h5>
+                        <p class="banner-desc">{{x.brand}}</p>
+                        <div class="product-caption-price"><span class="product-caption-price-old">{{x.price}} DT </span>
+                            <span class="product-caption-price-new">{{x.price - ((x.discount * x.price) /100) }} DT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4"ng-repeat="x in productsBestOffer |limitTo:1:2">
+                <ul class="product-labels">
+                    <li>-%{{x.discount}} </li>
+                </ul>
+                <div class="banner" style="background-color:#07B1D9;">
+                    <a class="banner-link" href="index.html#/product/{{x.productId}}"></a>
+                    <div class="banner-caption-bottom-left">
+                        <h5 class="banner-title">{{x.name}}</h5>
+                        <p class="banner-desc">{{x.brand}}</p>
+                        <div class="product-caption-price"><span class="product-caption-price-old">{{x.price}} DT </span>
+                            <span class="product-caption-price-new">{{x.price - ((x.discount * x.price) /100) }} DT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row" data-gutter="15">
+            <div class="col-md-4"ng-repeat="x in productsBestOffer |limitTo:1:3">
+                <div class="banner" style="background-color:#FFFFFF;">
+                    <a class="banner-link" href="index.html#/product/{{x.productId}}"></a>
+                    <div class="banner-caption-left">
+                        <h5 class="banner-title" style="color:#252525">{{x.name}}</h5>
+                        <p class="banner-desc" style="color:#252525">{{x.brand}}</p>
+                        <div class="product-caption-price"><span class="product-caption-price-old">{{x.price}} DT </span>
+                            <span class="product-caption-price-new">{{x.price - ((x.discount * x.price) /100) }} DT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                    <div class="banner" style="background-color:#68A042;"ng-repeat="x in productsBestOffer |limitTo:1:4">
+                        <a class="banner-link" href="index.html#/product/{{x.productId}}"></a>
+                        <div class="banner-caption-left">
+                            <h5 class="banner-title" style="color:#252525">{{x.name}}</h5>
+                            <p class="banner-desc" style="color:#252525">{{x.brand}}</p>
+                            <div class="product-caption-price"><span class="product-caption-price-old">{{x.price}} DT </span>
+                                <span class="product-caption-price-new">{{x.price - ((x.discount * x.price) /100) }} DT</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
+            <div class="col-md-4">
+            <div class="banner" style="background-color:#F0620E;"ng-repeat="x in productsBestOffer |limitTo:1:5">
+                <a class="banner-link" href="index.html#/product/{{x.productId}}"></a>
+                <div class="banner-caption-left">
+                    <h5 class="banner-title" style="color:#252525">{{x.name}}</h5>
+                    <p class="banner-desc" style="color:#252525">{{x.brand}}</p>
+                    <div class="product-caption-price"><span class="product-caption-price-old">{{x.price}} DT </span>
+                        <span class="product-caption-price-new">{{x.price - ((x.discount * x.price) /100) }} DT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
+    
+    <hr>
     
     <div class="container">
-    <div class="gap gap-small"></div>
-    <h3 class="widget-title-lg">Best Offer Products </h3>
-    <div class="row" data-gutter="15">
-        <div class="col-md-4" ng-repeat="x in productsBestOffer |limitTo:1">
-            <ul class="product-labels">
-                <li>-%{{x.discount}} </li>
-            </ul>
-            <div class="banner" style="background-color:#F5D02B;">
-                <a class="banner-link" href="#"></a>
-                <div class="banner-caption-bottom-left">
-                    <h5 class="banner-title">{{x.name}}</h5>
-                    <p class="banner-desc">{{x.brand}}</p>
-                    <p class="product-caption-price-new">{{x.price}}</p>
-                    </p>
+        <div class="gap gap-small"></div>
+        <h3 class="widget-title-lg">Other products</h3>
+        <div class="row" data-gutter="15" >
+            <div class="col-md-3" ng-repeat="x in allProduct" ng-model="productId" ng-init="productId=x.productId">
+                <div class="product ">
+                    <ul class="product-labels"></ul>
+                    <div class="product-img-wrap">
+                        <img class="product-img-primary" src=img/test_product/34.jpg alt="Image Alternative text" title="Image Title" />
+                        <img class="product-img-alt" src=img/test_product/34-a.jpg alt="Image Alternative text" title="Image Title" />
+                    </div>
+                    <a class="product-link" href="index.html#/product/{{x.productId}}")></a>
+                    <div class="product-caption">
+                        <ul class="product-caption-rating">
+                            <li class="rated">
+                                <i class="fa fa-star"></i>
+                            </li>
+                            <li class="rated">
+                                <i class="fa fa-star"></i>
+                            </li>
+                            <li class="rated">
+                                <i class="fa fa-star"></i>
+                            </li>
+                            <li class="rated">
+                                <i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <h5 class="product-caption-title">{{x.name}}</h5>
+                        <h5 class="product-caption-title"  >{{x.mark}}</h5>
+                        <h5 >{{averageRate}}</h5>
+                        <div class="product-caption-price">
+                            <span class="product-caption-price-new">${{x.price}}</span>
+                        </div>
+                    </div>
                 </div>
-                <img class="banner-img" src=img/test_banner/1.png alt="Image Alternative text" title="Image Title" style="bottom: -8px; right: -32px;" />
-            </div>
-        </div>
-        <div class="col-md-4"ng-repeat="x in productsBestOffer |limitTo:1:1">
-            <ul class="product-labels">
-                <li>-%{{x.discount}} </li>
-            </ul>
-            <div class="banner" style="background-color:#252525;">
-                <a class="banner-link" href="#"></a>
-                <div class="banner-caption-top-right">
-                    <h5 class="banner-title">{{x.name}}</h5>
-                    <p class="banner-desc">{{x.brand}}</p>
-                    <p class="product-caption-price-new">{{x.price}}</p>
-                    </p>
-                </div>
-                <img class="banner-img" src=img/test_banner/2.png alt="Image Alternative text" title="Image Title" style="bottom: -22px; left: 0; width: 235px;" />
-            </div>
-        </div>
-        <div class="col-md-4"ng-repeat="x in productsBestOffer |limitTo:1:2">
-            <ul class="product-labels">
-                <li>-%{{x.discount}} </li>
-            </ul>
-            <div class="banner" style="background-color:#07B1D9;">
-                <a class="banner-link" href="#"></a>
-                <div class="banner-caption-bottom-left">
-                    <h5 class="banner-title">{{x.name}}</h5>
-                    <p class="banner-desc">{{x.brand}}</p>
-                    <p class="product-caption-price-new">{{x.price}}</p>
-                    </p>
-                </div>
-                <img class="banner-img" src=img/test_banner/3.png alt="Image Alternative text" title="Image Title" style="top: -4px; right: -15px; width: 220px;" />
             </div>
         </div>
     </div>
-    <div class="row" data-gutter="15">
-        <div class="col-md-4"ng-repeat="x in productsBestOffer |limitTo:1:3">
-            <div class="banner" style="background-color:#FFFFFF;">
-                <a class="banner-link" href="#"></a>
-                <div class="banner-caption-left">
-                    <h5 class="banner-title" style="color:#252525">{{x.name}}</h5>
-                    <p class="banner-desc" style="color:#252525">{{x.brand}}</p>
-                    <p class="product-caption-price-new">{{x.price}}</p>
-                </div>
-                <img class="banner-img" src=img/test_banner/7.png alt="Image Alternative text" title="Image Title" style="bottom: 0px; right: -20px;" />
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="banner" style="background-color:#68A042;"ng-repeat="x in productsBestOffer |limitTo:1:4">
-                <a class="banner-link" href="#"></a>
-                <div class="banner-caption-left">
-                    <h5 class="banner-title" style="color:#252525">{{x.name}}</h5>
-                    <p class="banner-desc" style="color:#252525">{{x.brand}}</p>
-                    <p class="product-caption-price-new">{{x.price}}</p>
-                </div>
-                <img class="banner-img" src=img/test_banner/8.png alt="Image Alternative text" title="Image Title" style="bottom: 0px; right: -5px;" />
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="banner" style="background-color:#F0620E;"ng-repeat="x in productsBestOffer |limitTo:1:5">
-                <a class="banner-link" href="#"></a>
-                <div class="banner-caption-left">
-                    <h5 class="banner-title" style="color:#252525">{{x.name}}</h5>
-                    <p class="banner-desc" style="color:#252525">{{x.brand}}</p>
-                    <p class="product-caption-price-new">{{x.price}}</p>
-                </div>
-                <img class="banner-img" src=img/test_banner/9.png alt="Image Alternative text" title="Image Title" style="bottom: 0px; right: -10px; width: 180px;" />
-            </div>
-        </div>
-    </div>
-</div>
     
-       <hr>
-<div class="container">
-    <div class="gap gap-small"></div>
-    <h3 class="widget-title-lg">Other products</h3>
-    <div class="row" data-gutter="15" >
-        <div class="col-md-3" ng-repeat="x in productsBestOffer">
-            <div class="product " >
-                <ul class="product-labels"></ul>
-                <div class="product-img-wrap">
-                    <img class="product-img-primary" src=img/test_product/34.jpg alt="Image Alternative text" title="Image Title" />
-                    <img class="product-img-alt" src=img/test_product/34-a.jpg alt="Image Alternative text" title="Image Title" />
+    <hr>
+    
+    <div class="container">
+        <div class="gap gap-small"></div>
+        <h3 class="widget-title-lg">Lower Price Products</h3>
+        <div class="row" data-gutter="15" >
+                <div class="col-md-3" ng-repeat="x in ProductsByMinPrice" ng-model="productId" ng-init="productId=x.productId">
+                    <div class="product ">
+                        <ul class="product-labels"></ul>
+                        <div class="product-img-wrap">
+                            <img class="product-img-primary" src=img/test_product/34.jpg alt="Image Alternative text" title="Image Title" />
+                            <img class="product-img-alt" src=img/test_product/34-a.jpg alt="Image Alternative text" title="Image Title" />
+                        </div>
+                        <a class="product-link" href="index.html#/product/{{x.productId}}")></a>
+                        <div class="product-caption">
+                            <ul class="product-caption-rating">
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                            </ul>
+                            <h5 class="product-caption-title">{{x.name}}</h5>
+                            <h5 class="product-caption-title"  >{{x.mark}}</h5>
+                            <h5 >{{averageRate}}</h5>
+                            <div class="product-caption-price">
+                                <span class="product-caption-price-new">${{x.price}}</span>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-                <a class="product-link" href="#"></a>
-                <div class="product-caption">
-                    <ul class="product-caption-rating">
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
+            </div>
+    </div>
+    
+    <hr>
+    
+    <div class="container">
+        <div class="gap gap-small"></div>
+        <h3 class="widget-title-lg">Higher Price Products</h3>
+        <div class="row" data-gutter="15" >
+                <div class="col-md-3" ng-repeat="x in ProductsByMaxPrice" ng-model="productId" ng-init="productId=x.productId">
+                    <div class="product ">
+                        <ul class="product-labels"></ul>
+                        <div class="product-img-wrap">
+                            <img class="product-img-primary" src=img/test_product/34.jpg alt="Image Alternative text" title="Image Title" />
+                            <img class="product-img-alt" src=img/test_product/34-a.jpg alt="Image Alternative text" title="Image Title" />
+                        </div>
+                        <a class="product-link" href="index.html#/product/{{x.productId}}")></a>
+                        <div class="product-caption">
+                            <ul class="product-caption-rating">
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                            </ul>
+                            <h5 class="product-caption-title">{{x.name}}</h5>
+                            <h5 class="product-caption-title"  >{{x.mark}}</h5>
+                            <h5 >{{averageRate}}</h5>
+                            <div class="product-caption-price">
+                                <span class="product-caption-price-new">${{x.price}}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <hr>
+    
+    <div class="container">
+        <div class="gap gap-small"></div>
+        <h3 class="widget-title-lg">Most Rated Products</h3>
+        <div class="row" data-gutter="15" >
+            <div class="col-md-3" ng-repeat="x in ProductsByMaxInteraction" ng-model="productId" ng-init="productId=x.productId">
+                <div class="product ">
+                    <ul class="product-labels"></ul>
+                    <div class="product-img-wrap">
+                            <img class="product-img-primary" src=img/test_product/34.jpg alt="Image Alternative text" title="Image Title" />
+                            <img class="product-img-alt" src=img/test_product/34-a.jpg alt="Image Alternative text" title="Image Title" />
+                        </div>
+                    <a class="product-link" href="index.html#/product/{{x.productId}}")></a>
+                    <div class="product-caption">
+                            <ul class="product-caption-rating">
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li class="rated">
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                            </ul>
+                            <h5 class="product-caption-title">{{x.name}}</h5>
+                            <h5 class="product-caption-title"  >{{x.mark}}</h5>
+                            <h5 >{{averageRate.avg_rate()}</h5>
+                            <div class="product-caption-price">
+                                <span class="product-caption-price-new">${{x.price}}</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <div class="container">
+        <h3 class="widget-title-lg">Shop by Category</h3>
+        
+        <div class="gap gap-small"></div>
+        
+        <div class="row row-sm-gap" data-gutter="15">
+                <div class="col-md-2">
+                    <a class="banner-category" href="#">
+                        <img class="banner-category-img" src=img/test_icon/jewelry.png alt="Image Alternative text" title="Image Title" />
+                        <h5 class="banner-category-title">Jewelry</h5>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="banner-category" href="#">
+                        <img class="banner-category-img" src=img/test_icon/tech.png alt="Image Alternative text" title="Image Title" />
+                        <h5 class="banner-category-title">Technology</h5>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="banner-category" href="#">
+                        <img class="banner-category-img" src=img/test_icon/clothes.png alt="Image Alternative text" title="Image Title" />
+                        <h5 class="banner-category-title">Clothes</h5>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="banner-category" href="#">
+                        <img class="banner-category-img" src=img/test_icon/ball.png alt="Image Alternative text" title="Image Title" />
+                        <h5 class="banner-category-title">Sports</h5>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="banner-category" href="#">
+                        <img class="banner-category-img" src=img/test_icon/art.png alt="Image Alternative text" title="Image Title" />
+                        <h5 class="banner-category-title">Art & Design</h5>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="banner-category" href="#">
+                        <img class="banner-category-img" src=img/test_icon/tools.png alt="Image Alternative text" title="Image Title" />
+                        <h5 class="banner-category-title">Tools</h5>
+                    </a>
+                </div>
+        </div>
+    </div> 
+    <div class="gap gap-small"></div>
+    <div class="gap gap-small"></div>
+    
+    <hr>
+    
+    <div class="container">
+        <h3 class="widget-title-ml">About us</h3>
+        <div style="text-align:center" onmouseover="Play()" onmouseout="Pause()"> 
+            <video id="video1" width="480">
+                <source src=video.mp4 />
+            </video>
+        </div>
+
+        <script type="text/javascript"> 
+            var myVideo=document.getElementById("video1"); 
+
+            function Pause()
+            { 
+              myVideo.pause(); 
+            }
+            function Play()
+            {
+            if (myVideo.paused) 
+              myVideo.play();     
+            }    
+        </script>    
+    </div>
+        <div class="gap gap-small"></div>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row row-col-gap" data-gutter="60">
+                <div class="col-md-4">
+                    <h4 class="widget-title-sm">See&Buy</h4>
+                    <p> Here where you can find us !</p>
+                    <ul class="main-footer-social-list">
+                        <li>
+                            <a class="fa fa-facebook" href="#"></a>
                         </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
-                        </li>
-                        <li class="rated">
-                            <i class="fa fa-star"></i>
+                        <li> 
+                            <a class="fa fa-twitter" href="#"></a>
                         </li>
                         <li>
-                            <i class="fa fa-star"></i>
+                            <a class="fa fa-pinterest" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-instagram" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-google-plus" href="#"></a>
                         </li>
                     </ul>
-                    <h5 class="product-caption-title">{{x.name}}</h5>
-                    <div class="product-caption-price">
-                        <span class="product-caption-price-new">${{x.price}}</span>
-                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="widget-title-sm">Popular Tags</h4>
+                    <ul class="main-footer-tag-list">
+                        <li>
+                            <a href="#">New Season</a>
+                        </li>
+                        <li>
+                            <a href="#">Watches</a>
+                        </li>
+                        <li>
+                            <a href="#">woman</a>
+                        </li>
+                        <li>
+                            <a href="#">classic</a>
+                        </li>
+                        <li>
+                            <a href="#">modern</a>
+                        </li>
+                        <li>
+                            <a href="#">blue</a>
+                        </li>
+                        <li>
+                            <a href="#">shoes</a>
+                        </li>
+                        <li>
+                            <a href="#">running</a>
+                        </li>
+                        <li>
+                            <a href="#">jeans</a>
+                        </li>
+                        <li>
+                            <a href="#">sports</a>
+                        </li>
+                        <li>
+                            <a href="#">laptops</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="widget-title-sm">Newsletter</h4>
+                    <form>
+                        <div class="form-group">
+                            <label>Sign up to the newsletter</label>
+                            <input class="newsletter-input form-control" placeholder="Your e-mail address" type="text" />
+                        </div>
+                        <input class="btn btn-primary" type="submit" value="Sign up" />
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-</div>
- <hr> <div class="gap gap-small"></div>
- <div class="container">
-        <h3 class="widget-title-lg">Shop by Category</h3>
-        <div ng-app="showroomer" ng-controller="SearchController">
-      <p ng-repeat="p in products">DataSearch: {{p}}</p>
-     </div>
-        <div class="gap gap-small"></div>
-        <div class="row row-sm-gap" data-gutter="15">
-            <div class="col-md-2">
-                <a class="banner-category" href="#">
-                    <img class="banner-category-img" src=img/test_icon/jewelry.png alt="Image Alternative text" title="Image Title" />
-                    <h5 class="banner-category-title">Jewelry</h5>
-                </a>
-            </div>
-
-            <div class="col-md-2">
-                <a class="banner-category" href="#">
-                    <img class="banner-category-img" src=img/test_icon/tech.png alt="Image Alternative text" title="Image Title" />
-                    <h5 class="banner-category-title">Technology</h5>
-                </a>
-            </div>
-
-            <div class="col-md-2">
-                <a class="banner-category" href="#">
-                    <img class="banner-category-img" src=img/test_icon/clothes.png alt="Image Alternative text" title="Image Title" />
-                    <h5 class="banner-category-title">Clothes</h5>
-                </a>
-            </div>
-
-            <div class="col-md-2">
-                <a class="banner-category" href="#">
-                    <img class="banner-category-img" src=img/test_icon/ball.png alt="Image Alternative text" title="Image Title" />
-                    <h5 class="banner-category-title">Sports</h5>
-                </a>
-            </div>
-
-            <div class="col-md-2">
-                <a class="banner-category" href="#">
-                    <img class="banner-category-img" src=img/test_icon/art.png alt="Image Alternative text" title="Image Title" />
-                    <h5 class="banner-category-title">Art & Design</h5>
-                </a>
-            </div>
-
-            <div class="col-md-2">
-                <a class="banner-category" href="#">
-                    <img class="banner-category-img" src=img/test_icon/tools.png alt="Image Alternative text" title="Image Title" />
-                    <h5 class="banner-category-title">Tools</h5>
-                </a>
-            </div>
-        </div>
-    </div>   
- <div class="gap gap-small"></div>
-<footer class="main-footer">
-            <div class="container">
-                <div class="row row-col-gap" data-gutter="60">
-                    <div class="col-md-4">
-                        <h4 class="widget-title-sm">See&Buy</h4>
-                        <p> Here where you can find us !</p>
-                        <ul class="main-footer-social-list">
-                            <li>
-                                <a class="fa fa-facebook" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-twitter" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-pinterest" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-instagram" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-google-plus" href="#"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="widget-title-sm">Popular Tags</h4>
-                        <ul class="main-footer-tag-list">
-                            <li>
-                                <a href="#">New Season</a>
-                            </li>
-                            <li>
-                                <a href="#">Watches</a>
-                            </li>
-                            <li>
-                                <a href="#">woman</a>
-                            </li>
-                            <li>
-                                <a href="#">classic</a>
-                            </li>
-                            <li>
-                                <a href="#">modern</a>
-                            </li>
-                            <li>
-                                <a href="#">blue</a>
-                            </li>
-                            <li>
-                                <a href="#">shoes</a>
-                            </li>
-                            <li>
-                                <a href="#">running</a>
-                            </li>
-                            <li>
-                                <a href="#">jeans</a>
-                            </li>
-                            <li>
-                                <a href="#">sports</a>
-                            </li>
-                            <li>
-                                <a href="#">laptops</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="widget-title-sm">Newsletter</h4>
-                        <form>
-                            <div class="form-group">
-                                <label>Sign up to the newsletter</label>
-                                <input class="newsletter-input form-control" placeholder="Your e-mail address" type="text" />
-                            </div>
-                            <input class="btn btn-primary" type="submit" value="Sign up" />
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    </footer>
     <div class="copyright-area">
         <div class="container">
             <div class="row">
@@ -417,4 +511,7 @@
             </div>
         </div>
     </div>
+    <audio autoplay>
+        <source src="hello.mp3">
+    </audio>
 </div>
