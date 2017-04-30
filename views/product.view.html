@@ -1068,11 +1068,11 @@
                                         </tr>
                                         <tr>
                                             <td>Discount :</td>
-                                            <td>{{products.discount}}</td>
+                                            <td>{{products.discount}}%</td>
                                         </tr>
                                         <tr>
                                             <td>TVA :</td>
-                                            <td>{{products.tva}}</td>
+                                            <td>{{products.tva}}%</td>
                                         </tr>
                                     </tbody>
                                     </table>
@@ -1081,7 +1081,16 @@
                         <div class="col-md-4">
                             <div class="box-highlight">
                                 <p class="product-page-price">{{products.price}}DT</p>
-                                <p class="text-muted text-sm text-uppercase">Free Shipping</p><a class="btn btn-block btn-primary" href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                <input id="divCheckbox" style="display:none;">{{products.productId}}
+                                 <table
+                                class="table table-striped product-page-features-table">
+                              <tr>
+                                  <td>Quantity :</td>
+                                 <td><input class="form-control table-shopping-qty" type="text" value="1" ng-model="productQuantity" /></td>
+                              </tr>
+                                </table>
+                                
+                                 <p class="text-muted text-sm text-uppercase">Free Shipping</p><a class="btn btn-block btn-primary" ng-click="addToCart()"><i class="fa fa-shopping-cart" ></i>Add to Cart</a>
                                 <div class="product-page-side-section">
                                     <h5 class="product-page-side-title">Share This Item</h5>
                                     <ul class="product-page-share-item">

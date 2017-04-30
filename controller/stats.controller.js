@@ -1,4 +1,4 @@
-function StatsFunctions($scope, $http) {
+function StatsFunctions($scope, $http,$location) {
     $scope.productsMostQuantity = [];
     $http.get("https://mylabsing.mybluemix.net/api/stats/ProductsByMostQuantity").then(function (response) {
         $scope.productsMostQuantity = response.data;
@@ -55,5 +55,9 @@ function StatsFunctions($scope, $http) {
         })
 
     })
+    
+    $scope.getProductById=function(input){
+        $location.path('/product/'+input);
+    }
 }
 app.controller("StatsController",StatsFunctions);

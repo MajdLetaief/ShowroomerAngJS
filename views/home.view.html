@@ -222,16 +222,16 @@
        <hr>
 <div class="container">
     <div class="gap gap-small"></div>
-    <h3 class="widget-title-lg">Other products</h3>
+    <h3 class="widget-title-lg">Other productss</h3>
     <div class="row" data-gutter="15" >
         <div class="col-md-3" ng-repeat="x in productsBestOffer">
-            <div class="product " >
+
+            <div class="product" ng-click="getProductById(x.productId)">
                 <ul class="product-labels"></ul>
                 <div class="product-img-wrap">
                     <img class="product-img-primary" src=img/test_product/34.jpg alt="Image Alternative text" title="Image Title" />
                     <img class="product-img-alt" src=img/test_product/34-a.jpg alt="Image Alternative text" title="Image Title" />
                 </div>
-                <a class="product-link" href="#"></a>
                 <div class="product-caption">
                     <ul class="product-caption-rating">
                         <li class="rated">
@@ -250,10 +250,11 @@
                             <i class="fa fa-star"></i>
                         </li>
                     </ul>
-                    <h5 class="product-caption-title">{{x.name}}</h5>
+                    <h5 class="product-caption-title" >{{x.name}}</h5>
                     <div class="product-caption-price">
-                        <span class="product-caption-price-new">${{x.price}}</span>
+                        <span class="product-caption-price-new" >${{x.price}}</span>
                     </div>
+                    
                 </div>
             </div>
         </div>
