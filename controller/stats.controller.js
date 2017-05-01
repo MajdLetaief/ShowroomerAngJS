@@ -42,7 +42,7 @@ function StatsFunctions($scope, $http) {
             console.log($scope.ProductsByMinPrice);
         })
         $scope.ProductsByMaxInteraction = [];
-        $http.get("http://mylabsing.mybluemix.net/api/stats/ProductsByMaxInteraction").then(function (response) {
+        $http.get("http://showroomercore.mybluemix.net/api/product/getallwithrate").then(function (response) {
             $scope.ProductsByMaxInteraction = response.data;
             console.log($scope.ProductsByMaxInteraction);
         })
@@ -58,13 +58,13 @@ function StatsFunctions($scope, $http) {
             console.log($scope.allProduct);
         })
         $scope.averageRate = [];
+        var pro = $scope.productId
         $http.get("http://mylabsing.mybluemix.net/api/stats/averageRate"
             ,{headers:{
-                    "id" : $scope.productId}
+                    "id" : pro}
         }).then(function (response) {
-        $scope.averageRate = response.data;
+        $scope.averageRate= response.data;
         console.log($scope.averageRate);
         })
-
 }
 app.controller("StatsController",StatsFunctions);

@@ -1,6 +1,5 @@
 angular.module("showroomer", ["ngRoute", "ngResource"]);
 var app = angular.module("showroomer");
-
 function configFN($routeProvider) {
     $routeProvider
         .when('/home', {
@@ -11,7 +10,7 @@ function configFN($routeProvider) {
             controller: "StatsController",
             templateUrl: "views/home.view.html"
         })
-        .when('/product/:productId', {
+       .when('/product/:productId', {
             controller: "ProductController",
             templateUrl: "views/product.view.html"
         })
@@ -19,9 +18,10 @@ function configFN($routeProvider) {
                 controller: "SearchController",
                 templateUrl: "views/category.view.html"
             })
-    .otherwise({
-        redirectTo: '/home'
-    });
+        .otherwise({
+                redirectTo: '/home'
+        });
 }
 configFN.$inject = ['$routeProvider'];
 app.config(configFN);
+
