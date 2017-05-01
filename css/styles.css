@@ -72,6 +72,15 @@ h6,
     letter-spacing: 1px;
 }
 
+.widget-title-ml {
+    font-size: 45px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    margin-left: 41%;
+
+}
+
 .widget-title-sm {
     font-size: 17px;
     margin-bottom: 10px;
@@ -1887,7 +1896,7 @@ hr {
 }
 
 .table-shopping-qty {
-    width: 35px;
+    width: 45px;
 }
 
 .table-shopping-remove {
@@ -7054,6 +7063,8 @@ a.control_next {
     width: 160px;
     font-size: 18px;
 }
+
+
 
 
 /****** End of Owl Slider ******/
