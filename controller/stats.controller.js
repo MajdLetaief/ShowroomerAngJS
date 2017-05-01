@@ -45,7 +45,7 @@ function StatsFunctions($scope, $http, $location) {
         console.log($scope.ProductsByMinPrice);
     })
     $scope.ProductsByMaxInteraction = [];
-    $http.get("http://mylabsing.mybluemix.net/api/stats/ProductsByMaxInteraction").then(function (response) {
+    $http.get("http://showroomercore.mybluemix.net/api/product/getallwithrate").then(function (response) {
         $scope.ProductsByMaxInteraction = response.data;
         console.log($scope.ProductsByMaxInteraction);
     })
