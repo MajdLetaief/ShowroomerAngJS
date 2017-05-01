@@ -651,6 +651,20 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#nav-login-dialog" data-effect="mfp-move-from-top" class="popup-text">Sign In</a>
                 </li>
+                <li ng-controller="LoginController" >
+                <input type="button" value="Login" ng-click="onGoogleLogin()">
+                    <script type="text/javascript">
+                    (function(){
+                        var p = document.createElement('script');
+                        p.type = 'text/javascript';
+                        p.async = true;
+                        p.src ='https://apis.google.com/js/client.js?onload=onLoadFunction';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(p,s);
+                        
+                    });
+                    </script>
+                </li>
                 <li><a href="#nav-account-dialog" data-effect="mfp-move-from-top" class="popup-text">Create Account</a>
                 </li>
                 <li class="dropdown">
@@ -658,11 +672,11 @@
                     <ul class="dropdown-menu dropdown-menu-shipping-cart">
                         <li>
                             <a class="dropdown-menu-shipping-cart-img" href="#">
-                                <img src="img/cart/1.jpg" alt="Image Alternative text" title="Image Title" />
+                                <img ng-src="{{g_image}}" alt="Image Alternative text" title="Image Title" />
                             </a>
                             <div class="dropdown-menu-shipping-cart-inner">
-                                <p class="dropdown-menu-shipping-cart-price">$52</p>
-                                <p class="dropdown-menu-shipping-cart-item"><a href="#">Gucci Patent Leather Open Toe Platform</a>
+                                <p class="dropdown-menu-shipping-cart-price">{{gmail.username}}</p>
+                                <p class="dropdown-menu-shipping-cart-item"><a href="#">{{gmail.email}}</a>
                                 </p>
                             </div>
                         </li>

@@ -42,5 +42,11 @@ function configFN($routeProvider) {
         });
 
 }
+/*function onLoadFunction(){
+    gapi.client.setApiKey('AIzaSyDS76UQOG6nhITVj89TI9N3kV6KZ4HXdHk');
+    gapi.client.load('plus','v1',Function(){});
+}
+onLoadFunction.$inject;*/
+
 configFN.$inject = ['$routeProvider'];
 app.config(configFN);
