@@ -38,7 +38,7 @@ var x= "0";
     }
     $scope.clearall = function () {
 
-        $http.delete("http://showroomercore.mybluemix.net/api/order/clearall", {
+        $http.delete("https://showroomercore.mybluemix.net/api/order/clearall", {
             headers: {
                 "id": 1
             }
@@ -48,7 +48,7 @@ var x= "0";
     }
     $scope.checkout = function () {
         console.log(x);
-        $http.put("http://showroomercore.mybluemix.net/api/order/checkout", {
+        $http.put("https://showroomercore.mybluemix.net/api/order/checkout", {
             headers: {
                 "id": x
             }

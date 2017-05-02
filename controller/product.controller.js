@@ -2,7 +2,7 @@ function ProductControllerFN($scope, $http, $routeParams, $location) {
     $scope.products = [];
     $scope.showroomers = [];
     var productId = $routeParams.productId
-    $http.get("http://showroomercore.mybluemix.net/api/product", {
+    $http.get("https://showroomercore.mybluemix.net/api/product", {
             headers: {
                 "id": productId
             }
@@ -23,13 +23,13 @@ function ProductControllerFN($scope, $http, $routeParams, $location) {
 
         };
         console.log(data);
-        $http.post('http://showroomercore.mybluemix.net/api/order/', data).success(function (data, status) {
+        $http.post('https://showroomercore.mybluemix.net/api/order/', data).success(function (data, status) {
             console.log(status);
         });
         $location.path('/cart');
     }
 
-    $http.get("http://showroomercore.mybluemix.net/api/showroomer/getall").then(function (response) {
+    $http.get("https://showroomercore.mybluemix.net/api/showroomer/getall").then(function (response) {
         $scope.showroomers = response.data;
         console.log($scope.showroomers);
     })
