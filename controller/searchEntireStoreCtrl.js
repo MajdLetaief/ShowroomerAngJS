@@ -69,7 +69,7 @@
          * Build `states` list of key/value pairs
          */
         function loadAll() {
-           return $http.get("http://showroomercore.mybluemix.net/api/product/getall").then(function (response) {
+           return $http.get("https://showroomercore.mybluemix.net/api/product/getall").then(function (response) {
                var productsName;
                $scope.products = response.data;
                return $scope.products;
