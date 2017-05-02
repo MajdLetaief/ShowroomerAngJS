@@ -1,6 +1,6 @@
 function CloudControllerFN($scope, $http,$location) {
     $scope.products = [];
-    $http.get("http://showroomercore.mybluemix.net/api/product/getall").then(function (response) {
+    $http.get("https://showroomercore.mybluemix.net/api/product/getall").then(function (response) {
         $scope.products = response.data;
         console.log($scope.products);
     })
