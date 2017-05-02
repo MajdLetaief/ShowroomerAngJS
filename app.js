@@ -1,7 +1,6 @@
 angular.module("showroomer", ["ngRoute", "ngResource","ngMap",'ngMaterial', 'ngMessages', 'material.svgAssetsCache','rzModule', "dropstore-ng"]);
 
 var app = angular.module("showroomer");
-
 function configFN($routeProvider) {
     $routeProvider
         .when('/home2', {
@@ -18,7 +17,6 @@ function configFN($routeProvider) {
             templateUrl: "views/product.view.html"
         })
         .when('/category', {
-
             controller: "SearchController",
             templateUrl: "views/category.view.html"
         })
@@ -44,3 +42,4 @@ function configFN($routeProvider) {
 }
 configFN.$inject = ['$routeProvider'];
 app.config(configFN);
+

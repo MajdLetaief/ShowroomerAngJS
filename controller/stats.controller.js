@@ -5,7 +5,6 @@ function StatsFunctions($scope, $http, $location) {
         $scope.productsMostQuantity = response.data;
         console.log($scope.productsMostQuantity);
     })
-
     $scope.productsBestOffer = [];
     $http.get("https://mylabsing.mybluemix.net/api/stats/ProductBestOffer").then(function (response) {
         $scope.productsBestOffer = response.data;
@@ -46,7 +45,11 @@ function StatsFunctions($scope, $http, $location) {
         console.log($scope.ProductsByMinPrice);
     })
     $scope.ProductsByMaxInteraction = [];
+<<<<<<< HEAD
     $http.get("https://mylabsing.mybluemix.net/api/stats/ProductsByMaxInteraction").then(function (response) {
+=======
+    $http.get("http://showroomercore.mybluemix.net/api/product/getallwithrate").then(function (response) {
+>>>>>>> 4c678f92cfb53f696d95917511f5dc4a322d245a
         $scope.ProductsByMaxInteraction = response.data;
         console.log($scope.ProductsByMaxInteraction);
     })
