@@ -1,4 +1,4 @@
-angular.module("showroomer", ["ngRoute", "ngResource","ngMap",'ngMaterial', 'ngMessages', 'material.svgAssetsCache','rzModule', "dropstore-ng"]);
+angular.module("showroomer", ["ngRoute", "ngResource","ngMap",'ngMaterial', 'material.svgAssetsCache','rzModule', "dropstore-ng"]);
 
 var app = angular.module("showroomer");
 function configFN($routeProvider) {
@@ -16,30 +16,10 @@ function configFN($routeProvider) {
             controller: "ProductController",
             templateUrl: "views/product.view.html"
         })
-        .when('/categorySports', {
+        .when('/category/:category', {
             controller: "SearchController",
-            templateUrl: "views/categorySports.view.html"
-        })
-         .when('/categoryTechnologies', {
-            controller: "SearchController",
-            templateUrl: "views/categoryTechnologies.view.html"
-        })
-        .when('/categoryMusic', {
-            controller: "SearchController",
-            templateUrl: "views/categoryMusic.view.html"
-        })
-    .when('/categoryAccessories', {
-            controller: "SearchController",
-            templateUrl: "views/categoryAccessories.view.html"
-        })
-     .when('/categoryClothes', {
-            controller: "SearchController",
-            templateUrl: "views/categoryClothes.view.html"
-        })
-     .when('/categoryTools', {
-            controller: "SearchController",
-            templateUrl: "views/categoryTools.view.html"
-        })
+            templateUrl: "views/category.view.html"
+        })      
         .when('/cart', {
             controller: "CartController",
             templateUrl: "views/cart.view.html"
@@ -60,6 +40,12 @@ function configFN($routeProvider) {
         });
 
 }
+/*function onLoadFunction(){
+    gapi.client.setApiKey('AIzaSyDS76UQOG6nhITVj89TI9N3kV6KZ4HXdHk');
+    gapi.client.load('plus','v1',Function(){});
+}
+onLoadFunction.$inject;*/
+
 configFN.$inject = ['$routeProvider'];
 app.config(configFN);
 
