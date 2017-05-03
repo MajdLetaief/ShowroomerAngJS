@@ -48,7 +48,7 @@ $scope.checkout2=false;
     }
     $scope.checkout = function () {
         if (confirm("Become showroomer?")) {
-            alert("deleted" );
+            $location.path('/becomeShowroomer/2')
         } else {
            
                 $location.path('/checkout');

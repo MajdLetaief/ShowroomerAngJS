@@ -40,7 +40,7 @@ function BecomeShowroomerControllerFN($scope, $http, $routeParams,$location) {
                 "id": buyerId
             }
         })
-        $location.path('/home');
+        $location.path('/checkout');
     }
 }
 
