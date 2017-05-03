@@ -3,6 +3,7 @@
 
 
 <!-- Mirrored from remtsoy.com/tf_templates/the_box/demo_v1_6/product-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Mar 2017 18:28:59 GMT -->
+
 <head>
     <title>Showroomer By DevStorm</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
@@ -38,20 +39,20 @@
     <link rel="alternate stylesheet" type="text/css" href="css/schemes/scarlet.css" title="scarlet" media="all" />
 </head>
 
-<body ng-app="showroomer" ng-controller="ProductController"  >
+<body ng-app="showroomer" ng-controller="ProductController">
     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=200024957165637";
-          fjs.parentNode.insertBefore(js, fjs);
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=200024957165637";
+            fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
     <div class="global-wrapper clearfix" id="global-wrapper">
-
         <ng-include src="'./views/layouts/nav.view.html'"></ng-include>
-
         <div class="container">
             <header class="page-header">
                 <h1 class="page-title" style="">{{products.name}}</h1>
@@ -59,47 +60,20 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="product-page-product-wrap jqzoom-stage">
-                        
+
                         <div class="clearfix">
                             <a href="img/test_product_page/xperia/1-b.jpg" id="jqzoom" data-rel="gal-1">
                                 <img src="img/test_product_page/xperia/1.jpg" alt="Image Alternative text" title="Image Title" />
                             </a>
                         </div>
                     </div>
-                    <ul class="jqzoom-list">
-                        <li>
-                            <a class="zoomThumbActive" href="javascript:void(0)" data-rel="{gallery:'gal-1', smallimage: 'img/test_product_page/xperia/1.jpg', largeimage: 'img/test_product_page/xperia/1-b.jpg'}">
-                                <img src="img/test_product_page/xperia/1-s.jpg" alt="Image Alternative text" title="Image Title" />
-                            </a>
-                            <ul class="product-labels">
-                                    <li>{{products.discount}}%</li>
-                                </ul>
-
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" data-rel="{gallery:'gal-1', smallimage: 'img/test_product_page/xperia/2.jpg', largeimage: 'img/test_product_page/xperia/2-b.jpg'}">
-                                <img src="img/test_product_page/xperia/2-s.jpg" alt="Image Alternative text" title="Image Title" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" data-rel="{gallery:'gal-1', smallimage: 'img/test_product_page/xperia/3.jpg', largeimage: 'img/test_product_page/xperia/3-b.jpg'}">
-                                <img src="img/test_product_page/xperia/3-s.jpg" alt="Image Alternative text" title="Image Title" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" data-rel="{gallery:'gal-1', smallimage: 'img/test_product_page/xperia/4.jpg', largeimage: 'img/test_product_page/xperia/4-b.jpg'}">
-                                <img src="img/test_product_page/xperia/4-s.jpg" alt="Image Alternative text" title="Image Title" />
-                            </a>
-                        </li>
-                    </ul>
                 </div>
                 <div class="col-md-7">
                     <div class="row" data-gutter="10">
                         <div class="col-md-8">
                             <div class="box">
                                 <p class="product-page-desc">The first Android smartphone with a 6.4” Full HD Display and the first one ever to incorporate a TRILUMINOS™ Display with X-Reality for mobile – Xperia Z Ultra is the smartphone that takes you beyond your wildest dreams.</p>
-                                <table
-                                class="table table-striped product-page-features-table">
+                                <table class="table table-striped product-page-features-table">
                                     <tbody>
                                         <tr>
                                             <td>Category :</td>
@@ -109,7 +83,7 @@
                                             <td>Brand :</td>
                                             <td>{{products.brand}}</td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td>Available quantity :</td>
                                             <td>{{products.quantity}}</td>
@@ -123,22 +97,24 @@
                                             <td>{{products.tva}}%</td>
                                         </tr>
                                     </tbody>
-                                    </table>
+                                </table>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="box-highlight">
                                 <p class="product-page-price">{{products.price}}DT</p>
-                                <input id="divCheckbox" style="display:none;">{{products.productId}}
-                                 <table
-                                class="table table-striped product-page-features-table">
-                              <tr>
-                                  <td>Quantity :</td>
-                                 <td><input class="form-control table-shopping-qty" type="text" value="1" ng-model="productQuantity" /></td>
-                              </tr>
+                                <div class="ng-hide">
+                                    <input id="divCheckbox" style="display:none;">{{products.productId}}
+                                </div>
+                                <table class="table table-striped product-page-features-table">
+                                    <tr>
+                                        <td>Quantity :</td>
+                                        <td><input class="form-control table-shopping-qty" type="text" value="1" ng-model="productQuantity" /></td>
+                                    </tr>
+
                                 </table>
-                                
-                                 <p class="text-muted text-sm text-uppercase">Free Shipping</p><a class="btn btn-block btn-primary" ng-click="addToCart()"><i class="fa fa-shopping-cart" ></i>Add to Cart</a>
+
+                                <p class="text-muted text-sm text-uppercase">Free Shipping</p><a class="btn btn-block btn-primary" ng-click="addToCart()"><i class="fa fa-shopping-cart" ></i>Add to Cart</a>
                                 <div class="product-page-side-section">
                                     <h5 class="product-page-side-title">Shipping & Returns</h5>
                                     <p class="product-page-side-text">In the store of your choice in 3-5 working days</p>
@@ -152,198 +128,196 @@
                     </div>
                 </div>
             </div>
--
-            <div class="gap"></div>
-           
-            </div>
-           
-            
-      
-       
-        <div class="gap"></div>
-
+        </div>
+        <br>
         <div class="container">
-            <div class="tabbable product-tabs">
-                    <ul class="nav nav-tabs" id="myTab">
-                        <li  ng-click="b = 1"><a><i class="fa fa-list nav-tab-icon"></i>Map</a>
-                        </li>
-                          <li  ng-click="b = 2"><a><i class="fa fa-list nav-tab-icon"></i>Comments</a>
-                        </li>
-                        <li  ng-click="b = 3"><a><i class="fa fa-list nav-tab-icon"></i>Rates</a>
-                        </li>
-                    </ul>
+            <div class="tabbable product-tabs col-md-offset-4">
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="active" ng-click="b = 1"><a><i class="fa fa-map-marker nav-tab-icon"></i>Map</a>
+                    </li>
+                    <li class="active" ng-click="b = 2"><a><i class="fa fa-comment nav-tab-icon"></i>Comments</a>
+                    </li>
+                    <li class="active" ng-click="b = 3"><a><i class="fa fa-star nav-tab-icon"></i>Rates</a>
+                    </li>
+                </ul>
             </div>
             <div class="tab-content">
-                <div class="row row-eq-height product-overview-section" ng-show="b === 1">
-                    <div class="col-md-6" >
-                        <div class="map" ng-app="ngMap" >
-                            <ng-map center="[40.74, -74.18]">                                
-                                <marker ng-repeat="s in showroomers "position="[{{s.latitude}} ,{{s.longitude}}]"title="{{s.username}} address {{s.street}} {{s.city}} ,{{s.zipCode}} "centered="true"></marker>
-                            </ng-map>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <div class="row row-eq-height product-overview-section" ng-show="b === 2">
-                    <div class="col-md-6">
-                        <div class="fb-comments" data-href="https://showroomerjs.mybluemix.net/app/index.html#/product/{{products.productId}}" data-numposts="10"></div>
-                    </div>
-                </div>
-            </div>
-        <div class="row row-eq-height product-overview-section" ng-show="b === 3">
-            <div class="col-md-6 col-md-offset-3">
-                <div ng-controller="StarCtrl">
-                    <div class=col-md-12 >
-
-                        <div ng-repeat="rating in ratings">
-                            <h2>{{rating.current}} /
-                                {{rating.max}}</h2>
-                            <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
-                        </div>
-                     </div>
-                    <div class="col-md-12 clear">
-                        <div class="btn-toolbar" role="toolbar">
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-primary" data-ng-click="addRate()">Send</button>
+                <div class="tab-pane fade in active" ng-show="b === 1">
+                    <div class="row row-eq-height product-overview-section">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="map" ng-app="ngMap">
+                                <ng-map center="[40.74, -74.18]">
+                                    <marker ng-repeat="s in showroomers " position="[{{s.latitude}} ,{{s.longitude}}]" title="{{s.username}} address {{s.street}} {{s.city}} ,{{s.zipCode}} " centered="true"></marker>
+                                </ng-map>
                             </div>
                         </div>
-                        <div>
-                        <h1> Rate Average</h1>
-                        <div hidden="true" >{{averageRatePerProduct.avg_rate_product}}</div>
-                        <h2>{{averageRatePerProduct.avg_rate_product}} /
-                            5</h2>
-                        <div star-rating rating-value="averageRatePerProduct.avg_rate_product" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
-                        </div>
-                        </div>
-                </div>
-            </div></div>
+                    </div>
 
-        <div class="gap"></div>
-        <footer class="main-footer">
-            <div class="container">
-                <div class="row row-col-gap" data-gutter="60">
-                    <div class="col-md-4">
-                        <h4 class="widget-title-sm">See&Buy</h4>
-                        <p> Here where you can find us !</p>
-                        <ul class="main-footer-social-list">
-                            <li>
-                                <a class="fa fa-facebook" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-twitter" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-pinterest" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-instagram" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-google-plus" href="#"></a>
-                            </li>
-                        </ul>
+                </div>
+                <div class="tab-pane fade in active" ng-show="b === 2">
+                    <div class="row row-eq-height product-overview-section">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="fb-comments" data-href="https://showroomerjs.mybluemix.net/app/index.html#/product/{{products.productId}}" data-numposts="10"></div>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <h4 class="widget-title-sm">Popular Tags</h4>
-                        <ul class="main-footer-tag-list">
-                            <li>
-                                <a href="#">New Season</a>
-                            </li>
-                            <li>
-                                <a href="#">Watches</a>
-                            </li>
-                            <li>
-                                <a href="#">woman</a>
-                            </li>
-                            <li>
-                                <a href="#">classic</a>
-                            </li>
-                            <li>
-                                <a href="#">modern</a>
-                            </li>
-                            <li>
-                                <a href="#">blue</a>
-                            </li>
-                            <li>
-                                <a href="#">shoes</a>
-                            </li>
-                            <li>
-                                <a href="#">running</a>
-                            </li>
-                            <li>
-                                <a href="#">jeans</a>
-                            </li>
-                            <li>
-                                <a href="#">sports</a>
-                            </li>
-                            <li>
-                                <a href="#">laptops</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="widget-title-sm">Newsletter</h4>
-                        <form>
-                            <div class="form-group">
-                                <label>Sign up to the newsletter</label>
-                                <input class="newsletter-input form-control" placeholder="Your e-mail address" type="text" />
+
+                </div>
+
+                <div class="row row-eq-height product-overview-section" ng-show="b === 3">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div ng-controller="StarCtrl">
+                            <div>
+                                <div ng-repeat="rating in ratings">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <h2>{{rating.current}} / {{rating.max}}</h2>
+                                    </div>
+                                    <div class="col-md-19 col-md-offset-4" star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
+                                </div>
                             </div>
-                            <input class="btn btn-primary" type="submit" value="Sign up" />
-                        </form>
-                    </div>  
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="btn-toolbar" role="toolbar">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-primary" data-ng-click="addRate()">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-11 col-md-offset-3">
+                                    <h1> Rate Average</h1>
+                                    <div hidden="true">{{averageRatePerProduct.avg_rate_product}}</div>
+                                    <h2 class="col-md-6 col-md-offset-1">{{averageRatePerProduct.avg_rate_product}} / 5
+                                    </h2>
+                                    <div star-rating rating-value="averageRatePerProduct.avg_rate_product" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
+                                </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </footer>
-        <div class="copyright-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="copyright-text">Copyright &copy; <a href="#">See&Buy</a> 2017. Designed by DevStorm team. All rights reseved</p>
-                </div>
-                <div class="col-md-6">
-                    <ul class="payment-icons-list">
-                        <li>
-                            <img src="img/payment/visa-straight-32px.png" alt="Image Alternative text" title="Pay with Visa" />
-                        </li>
-                        <li>
-                            <img src="img/payment/mastercard-straight-32px.png" alt="Image Alternative text" title="Pay with Mastercard" />
-                        </li>
-                        <li>
-                            <img src="img/payment/paypal-straight-32px.png" alt="Image Alternative text" title="Pay with Paypal" />
-                        </li>
-                        <li>
-                            <img src="img/payment/visa-electron-straight-32px.png" alt="Image Alternative text" title="Pay with Visa-electron" />
-                        </li>
-                        <li>
-                            <img src="img/payment/maestro-straight-32px.png" alt="Image Alternative text" title="Pay with Maestro" />
-                        </li>
-                        <li>
-                            <img src="img/payment/discover-straight-32px.png" alt="Image Alternative text" title="Pay with Discover" />
-                        </li>
-                    </ul>
-      
-                </div>
+
             </div>
         </div>
-    </div></div>
-    
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/icheck.js"></script>
-    <script src="js/ionrangeslider.js"></script>
-    <script src="js/jqzoom.js"></script>
-    <script src="js/card-payment.js"></script>
-    <script src="js/owl-carousel.js"></script>
-    <script src="js/magnific.js"></script>
-    <script src="js/custom.js"></script>
+        <div class="gap"></div>
+        <footer class="main-footer">
+                <div class="container">
+                    <div class="row row-col-gap" data-gutter="60">
+                        <div class="col-md-4">
+                            <h4 class="widget-title-sm">See&Buy</h4>
+                            <p> Here where you can find us !</p>
+                            <ul class="main-footer-social-list">
+                                <li>
+                                    <a class="fa fa-facebook" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-twitter" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-pinterest" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-instagram" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-google-plus" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="widget-title-sm">Popular Tags</h4>
+                            <ul class="main-footer-tag-list">
+                                <li>
+                                    <a href="#">New Season</a>
+                                </li>
+                                <li>
+                                    <a href="#">Watches</a>
+                                </li>
+                                <li>
+                                    <a href="#">woman</a>
+                                </li>
+                                <li>
+                                    <a href="#">classic</a>
+                                </li>
+                                <li>
+                                    <a href="#">modern</a>
+                                </li>
+                                <li>
+                                    <a href="#">blue</a>
+                                </li>
+                                <li>
+                                    <a href="#">shoes</a>
+                                </li>
+                                <li>
+                                    <a href="#">running</a>
+                                </li>
+                                <li>
+                                    <a href="#">jeans</a>
+                                </li>
+                                <li>
+                                    <a href="#">sports</a>
+                                </li>
+                                <li>
+                                    <a href="#">laptops</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="widget-title-sm">Newsletter</h4>
+                            <form>
+                                <div class="form-group">
+                                    <label>Sign up to the newsletter</label>
+                                    <input class="newsletter-input form-control" placeholder="Your e-mail address" type="text" />
+                                </div>
+                                <input class="btn btn-primary" type="submit" value="Sign up" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        <div class="copyright-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="copyright-text">Copyright &copy; <a href="#">See&Buy</a> 2017. Designed by DevStorm team. All rights reseved</p>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="payment-icons-list">
+                                <li>
+                                    <img src="img/payment/visa-straight-32px.png" alt="Image Alternative text" title="Pay with Visa" />
+                                </li>
+                                <li>
+                                    <img src="img/payment/mastercard-straight-32px.png" alt="Image Alternative text" title="Pay with Mastercard" />
+                                </li>
+                                <li>
+                                    <img src="img/payment/paypal-straight-32px.png" alt="Image Alternative text" title="Pay with Paypal" />
+                                </li>
+                                <li>
+                                    <img src="img/payment/visa-electron-straight-32px.png" alt="Image Alternative text" title="Pay with Visa-electron" />
+                                </li>
+                                <li>
+                                    <img src="img/payment/maestro-straight-32px.png" alt="Image Alternative text" title="Pay with Maestro" />
+                                </li>
+                                <li>
+                                    <img src="img/payment/discover-straight-32px.png" alt="Image Alternative text" title="Pay with Discover" />
+                                </li>
+                            </ul>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
 
-    <script src="js/switcher.js"></script>
-
-
-
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/icheck.js"></script>
+        <script src="js/ionrangeslider.js"></script>
+        <script src="js/jqzoom.js"></script>
+        <script src="js/card-payment.js"></script>
+        <script src="js/owl-carousel.js"></script>
+        <script src="js/magnific.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/switcher.js"></script>
 </body>
 
 
 <!-- Mirrored from remtsoy.com/tf_templates/the_box/demo_v1_6/product-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Mar 2017 18:29:25 GMT -->
+
 </html>
