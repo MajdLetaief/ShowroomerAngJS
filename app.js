@@ -16,6 +16,10 @@ function configFN($routeProvider) {
             controller: "ProductController",
             templateUrl: "views/product.view.html"
         })
+        .when('/becomeShowroomer/:buyerId', {
+            controller: "BecomeShowroomerController",
+            templateUrl: "views/becomeShowroomer.view.html"
+        })
         .when('/categorySports', {
             controller: "SearchController",
             templateUrl: "views/categorySports.view.html"
@@ -28,15 +32,15 @@ function configFN($routeProvider) {
             controller: "SearchController",
             templateUrl: "views/categoryMusic.view.html"
         })
-    .when('/categoryAccessories', {
+        .when('/categoryAccessories', {
             controller: "SearchController",
             templateUrl: "views/categoryAccessories.view.html"
         })
-     .when('/categoryClothes', {
+        .when('/categoryClothes', {
             controller: "SearchController",
             templateUrl: "views/categoryClothes.view.html"
         })
-     .when('/categoryTools', {
+        .when('/categoryTools', {
             controller: "SearchController",
             templateUrl: "views/categoryTools.view.html"
         })
