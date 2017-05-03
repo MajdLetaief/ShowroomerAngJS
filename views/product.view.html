@@ -129,7 +129,9 @@
                         <div class="col-md-4">
                             <div class="box-highlight">
                                 <p class="product-page-price">{{products.price}}DT</p>
-                                <input id="divCheckbox" style="display:none;">{{products.productId}}
+                                <div class="ng-hide">
+                                    <input id="divCheckbox" style="display:none;">{{products.productId}}
+                                </div>
                                  <table
                                 class="table table-striped product-page-features-table">
                               <tr>
