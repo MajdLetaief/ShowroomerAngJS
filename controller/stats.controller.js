@@ -60,15 +60,7 @@ function StatsFunctions($scope, $http, $location) {
             $scope.allProduct = response.data;
             console.log($scope.allProduct);
         })
-    $scope.averageRate = [];
-    $http.get("https://mylabsing.mybluemix.net/api/stats/averageRate", {
-        headers: {
-            "id": $scope.productId
-        }
-    }).then(function (response) {
-        $scope.averageRate = response.data;
-        console.log($scope.averageRate);
-    })
+
 
     $scope.getProductById = function (input) {
         $location.path('/product/' + input);
