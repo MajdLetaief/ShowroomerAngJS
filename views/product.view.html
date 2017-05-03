@@ -169,7 +169,9 @@
                         </li>
                           <li  ng-click="b = 2"><a><i class="fa fa-list nav-tab-icon"></i>Comments</a>
                         </li>
-                </ul>
+                        <li  ng-click="b = 3"><a><i class="fa fa-list nav-tab-icon"></i>Rates</a>
+                        </li>
+                    </ul>
             </div>
             <div class="tab-content">
                 <div class="row row-eq-height product-overview-section" ng-show="b === 1">
@@ -181,11 +183,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="row row-eq-height product-overview-section" ng-show="b === 2">
-                    <div class="col-md-6">
-                        <div class="fb-comments" data-href="http://localhost:8080/ShowroomerAngJS/index.html#/product/{{products.productId}}" data-numposts="10"></div>
-                    </div>
-                </div>
             </div>
                 <div class="row row-eq-height product-overview-section" ng-show="b === 2">
                     <div class="col-md-6">
@@ -193,7 +190,34 @@
                     </div>
                 </div>
             </div>
-        </div>
+        <div class="row row-eq-height product-overview-section" ng-show="b === 3">
+            <div class="col-md-6 col-md-offset-3">
+                <div ng-controller="StarCtrl">
+                    <div class=col-md-12 >
+
+                        <div ng-repeat="rating in ratings">
+                            <h2>{{rating.current}} /
+                                {{rating.max}}</h2>
+                            <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
+                        </div>
+                     </div>
+                    <div class="col-md-12 clear">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary" data-ng-click="addRate()">Send</button>
+                            </div>
+                        </div>
+                        <div>
+                        <h1> Rate Average</h1>
+                        <div hidden="true" >{{averageRatePerProduct.avg_rate_product}}</div>
+                        <h2>{{averageRatePerProduct.avg_rate_product}} /
+                            5</h2>
+                        <div star-rating rating-value="averageRatePerProduct.avg_rate_product" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
+                        </div>
+                        </div>
+                </div>
+            </div></div>
+
         <div class="gap"></div>
         <footer class="main-footer">
             <div class="container">

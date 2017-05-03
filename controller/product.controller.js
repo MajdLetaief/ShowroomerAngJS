@@ -33,11 +33,6 @@ function ProductControllerFN($scope, $http, $routeParams, $location) {
         $scope.showroomers = response.data;
         console.log($scope.showroomers);
     })
-
-
-
-
-
 }
 
 app.controller("ProductController", ProductControllerFN);
