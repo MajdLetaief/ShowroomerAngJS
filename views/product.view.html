@@ -50,12 +50,9 @@
             js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=200024957165637";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-
     </script>
     <div class="global-wrapper clearfix" id="global-wrapper">
-
         <ng-include src="'./views/layouts/nav.view.html'"></ng-include>
-
         <div class="container">
             <header class="page-header">
                 <h1 class="page-title" style="">{{products.name}}</h1>
@@ -114,6 +111,7 @@
                                         <td>Quantity :</td>
                                         <td><input class="form-control table-shopping-qty" type="text" value="1" ng-model="productQuantity" ng-change="changeWatch()"/></td>
                                     </tr>
+
                                 </table>
 
                                 <p class="text-muted text-sm text-uppercase">Free Shipping</p><a class="btn btn-block btn-primary" ng-click="addToCart()"><i class="fa fa-shopping-cart" ></i>Add to Cart</a>
@@ -132,199 +130,191 @@
             </div>
         </div>
         <br>
-
         <div class="container">
-            <div class="tabbable product-tabs">
-
-              
-
-                    <ul class="nav nav-tabs" id="myTab">
-                        <li class="active" ng-click="b = 1"><a><i class="fa fa-list nav-tab-icon"></i>Map</a>
-                        </li>
-                          <li class="active" ng-click="b = 2"><a><i class="fa fa-comment nav-tab-icon"></i>Comments</a>
-                        </li>
-                        <li class="active" ng-click="b = 3"><a><i class="fa fa-star nav-tab-icon"></i>Rates</a>
-                        </li>
-                    </ul>
-
+            <div class="tabbable product-tabs col-md-offset-4">
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="active" ng-click="b = 1"><a><i class="fa fa-map-marker nav-tab-icon"></i>Map</a>
+                    </li>
+                    <li class="active" ng-click="b = 2"><a><i class="fa fa-comment nav-tab-icon"></i>Comments</a>
+                    </li>
+                    <li class="active" ng-click="b = 3"><a><i class="fa fa-star nav-tab-icon"></i>Rates</a>
+                    </li>
+                </ul>
             </div>
             <div class="tab-content">
-                 <div class="tab-pane fade in active" ng-show="b === 1">
-                <div class="row row-eq-height product-overview-section" >
+                <div class="tab-pane fade in active" ng-show="b === 1">
+                    <div class="row row-eq-height product-overview-section">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="map" ng-app="ngMap">
+                                <ng-map center="[40.74, -74.18]">
+                                    <marker ng-repeat="s in showroomers " position="[{{s.latitude}} ,{{s.longitude}}]" title="{{s.username}} address {{s.street}} {{s.city}} ,{{s.zipCode}} " centered="true"></marker>
+                                </ng-map>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade in active" ng-show="b === 2">
+                    <div class="row row-eq-height product-overview-section">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="fb-comments" data-href="https://showroomerjs.mybluemix.net/app/index.html#/product/{{products.productId}}" data-numposts="10"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row row-eq-height product-overview-section" ng-show="b === 3">
                     <div class="col-md-6 col-md-offset-3">
-                        
-                        <div class="map" ng-app="ngMap">
-                            <ng-map center="[40.74, -74.18]">
-                                <marker ng-repeat="s in showroomers " position="[{{s.latitude}} ,{{s.longitude}}]" title="{{s.username}} address {{s.street}} {{s.city}} ,{{s.zipCode}} " centered="true"></marker>
-                            </ng-map>
+                        <div ng-controller="StarCtrl">
+                            <div>
+                                <div ng-repeat="rating in ratings">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <h2>{{rating.current}} / {{rating.max}}</h2>
+                                    </div>
+                                    <div class="col-md-19 col-md-offset-4" star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="btn-toolbar" role="toolbar">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-primary" data-ng-click="addRate()">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-11 col-md-offset-3">
+                                    <h1> Rate Average</h1>
+                                    <div hidden="true">{{averageRatePerProduct.avg_rate_product}}</div>
+                                    <h2 class="col-md-6 col-md-offset-1">{{averageRatePerProduct.avg_rate_product}} / 5
+                                    </h2>
+                                    <div star-rating rating-value="averageRatePerProduct.avg_rate_product" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
+                                </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="tab-pane fade in active" ng-show="b === 2">
-            <div class="row row-eq-height product-overview-section" >
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="fb-comments" data-href="https://showroomerjs.mybluemix.net/app/index.html#/product/{{products.productId}}" data-numposts="10"></div>
-                </div>
-            </div>
-
         </div>
-
-        <div class="row row-eq-height product-overview-section" ng-show="b === 3">
-            <div class="col-md-6 col-md-offset-3">
-                <div ng-controller="StarCtrl">
-                    <div class=col-md-12 >
-
-                        <div ng-repeat="rating in ratings">
-                            <h2>{{rating.current}} /
-                                {{rating.max}}</h2>
-                            <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
-                        </div>
-                     </div>
-                    <div class="col-md-12 clear">
-                        <div class="btn-toolbar" role="toolbar">
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-primary" data-ng-click="addRate()">Send</button>
-                            </div>
-                        </div>
-                        <div>
-                        <h1> Rate Average</h1>
-                        <div hidden="true" >{{averageRatePerProduct.avg_rate_product}}</div>
-                        <h2>{{averageRatePerProduct.avg_rate_product}} /
-                            5</h2>
-                        <div star-rating rating-value="averageRatePerProduct.avg_rate_product" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
-                        </div>
-                        </div>
-                </div>
-            </div></div>
-
-            </div>
         <div class="gap"></div>
         <footer class="main-footer">
-            <div class="container">
-                <div class="row row-col-gap" data-gutter="60">
-                    <div class="col-md-4">
-                        <h4 class="widget-title-sm">See&Buy</h4>
-                        <p> Here where you can find us !</p>
-                        <ul class="main-footer-social-list">
-                            <li>
-                                <a class="fa fa-facebook" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-twitter" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-pinterest" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-instagram" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="fa fa-google-plus" href="#"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="widget-title-sm">Popular Tags</h4>
-                        <ul class="main-footer-tag-list">
-                            <li>
-                                <a href="#">New Season</a>
-                            </li>
-                            <li>
-                                <a href="#">Watches</a>
-                            </li>
-                            <li>
-                                <a href="#">woman</a>
-                            </li>
-                            <li>
-                                <a href="#">classic</a>
-                            </li>
-                            <li>
-                                <a href="#">modern</a>
-                            </li>
-                            <li>
-                                <a href="#">blue</a>
-                            </li>
-                            <li>
-                                <a href="#">shoes</a>
-                            </li>
-                            <li>
-                                <a href="#">running</a>
-                            </li>
-                            <li>
-                                <a href="#">jeans</a>
-                            </li>
-                            <li>
-                                <a href="#">sports</a>
-                            </li>
-                            <li>
-                                <a href="#">laptops</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="widget-title-sm">Newsletter</h4>
-                        <form>
-                            <div class="form-group">
-                                <label>Sign up to the newsletter</label>
-                                <input class="newsletter-input form-control" placeholder="Your e-mail address" type="text" />
-                            </div>
-                            <input class="btn btn-primary" type="submit" value="Sign up" />
-                        </form>
+                <div class="container">
+                    <div class="row row-col-gap" data-gutter="60">
+                        <div class="col-md-4">
+                            <h4 class="widget-title-sm">See&Buy</h4>
+                            <p> Here where you can find us !</p>
+                            <ul class="main-footer-social-list">
+                                <li>
+                                    <a class="fa fa-facebook" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-twitter" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-pinterest" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-instagram" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-google-plus" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="widget-title-sm">Popular Tags</h4>
+                            <ul class="main-footer-tag-list">
+                                <li>
+                                    <a href="#">New Season</a>
+                                </li>
+                                <li>
+                                    <a href="#">Watches</a>
+                                </li>
+                                <li>
+                                    <a href="#">woman</a>
+                                </li>
+                                <li>
+                                    <a href="#">classic</a>
+                                </li>
+                                <li>
+                                    <a href="#">modern</a>
+                                </li>
+                                <li>
+                                    <a href="#">blue</a>
+                                </li>
+                                <li>
+                                    <a href="#">shoes</a>
+                                </li>
+                                <li>
+                                    <a href="#">running</a>
+                                </li>
+                                <li>
+                                    <a href="#">jeans</a>
+                                </li>
+                                <li>
+                                    <a href="#">sports</a>
+                                </li>
+                                <li>
+                                    <a href="#">laptops</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="widget-title-sm">Newsletter</h4>
+                            <form>
+                                <div class="form-group">
+                                    <label>Sign up to the newsletter</label>
+                                    <input class="newsletter-input form-control" placeholder="Your e-mail address" type="text" />
+                                </div>
+                                <input class="btn btn-primary" type="submit" value="Sign up" />
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
         <div class="copyright-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="copyright-text">Copyright &copy; <a href="#">See&Buy</a> 2017. Designed by DevStorm team. All rights reseved</p>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="payment-icons-list">
-                            <li>
-                                <img src="img/payment/visa-straight-32px.png" alt="Image Alternative text" title="Pay with Visa" />
-                            </li>
-                            <li>
-                                <img src="img/payment/mastercard-straight-32px.png" alt="Image Alternative text" title="Pay with Mastercard" />
-                            </li>
-                            <li>
-                                <img src="img/payment/paypal-straight-32px.png" alt="Image Alternative text" title="Pay with Paypal" />
-                            </li>
-                            <li>
-                                <img src="img/payment/visa-electron-straight-32px.png" alt="Image Alternative text" title="Pay with Visa-electron" />
-                            </li>
-                            <li>
-                                <img src="img/payment/maestro-straight-32px.png" alt="Image Alternative text" title="Pay with Maestro" />
-                            </li>
-                            <li>
-                                <img src="img/payment/discover-straight-32px.png" alt="Image Alternative text" title="Pay with Discover" />
-                            </li>
-                        </ul>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="copyright-text">Copyright &copy; <a href="#">See&Buy</a> 2017. Designed by DevStorm team. All rights reseved</p>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="payment-icons-list">
+                                <li>
+                                    <img src="img/payment/visa-straight-32px.png" alt="Image Alternative text" title="Pay with Visa" />
+                                </li>
+                                <li>
+                                    <img src="img/payment/mastercard-straight-32px.png" alt="Image Alternative text" title="Pay with Mastercard" />
+                                </li>
+                                <li>
+                                    <img src="img/payment/paypal-straight-32px.png" alt="Image Alternative text" title="Pay with Paypal" />
+                                </li>
+                                <li>
+                                    <img src="img/payment/visa-electron-straight-32px.png" alt="Image Alternative text" title="Pay with Visa-electron" />
+                                </li>
+                                <li>
+                                    <img src="img/payment/maestro-straight-32px.png" alt="Image Alternative text" title="Pay with Maestro" />
+                                </li>
+                                <li>
+                                    <img src="img/payment/discover-straight-32px.png" alt="Image Alternative text" title="Pay with Discover" />
+                                </li>
+                            </ul>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/icheck.js"></script>
-    <script src="js/ionrangeslider.js"></script>
-    <script src="js/jqzoom.js"></script>
-    <script src="js/card-payment.js"></script>
-    <script src="js/owl-carousel.js"></script>
-    <script src="js/magnific.js"></script>
-    <script src="js/custom.js"></script>
-
-
-    <script src="js/switcher.js"></script>
-
-
-
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/icheck.js"></script>
+        <script src="js/ionrangeslider.js"></script>
+        <script src="js/jqzoom.js"></script>
+        <script src="js/card-payment.js"></script>
+        <script src="js/owl-carousel.js"></script>
+        <script src="js/magnific.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/switcher.js"></script>
 </body>
 
 

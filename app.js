@@ -16,6 +16,10 @@ function configFN($routeProvider) {
             controller: "ProductController",
             templateUrl: "views/product.view.html"
         })
+        .when('/becomeShowroomer/:buyerId', {
+            controller: "BecomeShowroomerController",
+            templateUrl: "views/becomeShowroomer.view.html"
+        })
         .when('/category/:category', {
             controller: "SearchController",
             templateUrl: "views/category.view.html"

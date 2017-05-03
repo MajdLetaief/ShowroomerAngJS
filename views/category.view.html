@@ -3,6 +3,7 @@
 
 
 <!-- Mirrored from remtsoy.com/tf_templates/the_box/demo_v1_6/category-layout-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Mar 2017 18:28:15 GMT -->
+
 <head>
     <title>Showroomer By DevStorm</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
@@ -36,7 +37,7 @@
     <link rel="alternate stylesheet" type="text/css" href="css/schemes/leather.css" title="leather" media="all" />
     <link rel="alternate stylesheet" type="text/css" href="css/schemes/denim.css" title="denim" media="all" />
     <link rel="alternate stylesheet" type="text/css" href="css/schemes/scarlet.css" title="scarlet" media="all" />
-    
+
 </head>
 
 <body ng-app="showroomer" ng-controller="SearchController">
@@ -54,16 +55,16 @@
                 <div class="col-md-3">
                     <aside class="category-filters">
                         <div class="category-filters-section">
-                          <h3 class="widget-title-sm">Search in this category</h3>
+                            <h3 class="widget-title-sm">Search in this category</h3>
                             <br>
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Type category ..." ng-model="search"/>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Type category ..." ng-model="search" />
+                            </div>
                         </div>
-                        </div>              
                         <div class="category-filters-section">
                             <h3 class="widget-title-sm">Other categories</h3>
                             <ul class="cateogry-filters-list">
-                                
+
                                 <li><a href="index.html#/category/Technologies">Technologies</a>
                                 </li>
                                 <li><a href="index.html#/category/Sports">Sports</a>
@@ -78,11 +79,11 @@
                                 </li>
                             </ul>
                         </div>
-                        </aside>
+                    </aside>
                 </div>
                 <div class="col-md-9">
                     <div class="row" data-gutter="15">
-                        <div class="col-md-4" ng-repeat="p in products | filter : search | filter : category" >
+                        <div class="col-md-4" ng-repeat="p in products | filter : search | filter : category">
                             <div class="product ">
                                 <ul class="product-labels">
                                     <li>{{p.discount}}%</li>
@@ -97,100 +98,92 @@
                                     <div class="product-caption-price"><span class="product-caption-price-old">{{p.price}} DT </span>
                                         <span class="product-caption-price-new">{{p.price - ((p.discount * p.price) /100) }} DT</span>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
-                        
-                
-                    <div class="row" data-gutter="15">
-                       
-                        
-                        </div>
-                    <div class="row" data-gutter="15">
-                       
+                        <div class="row" data-gutter="15"></div>
+                        <div class="row" data-gutter="15"></div>
+                        <div class="row" data-gutter="15"></div>
                     </div>
-                    <div class="row" data-gutter="15">
-                     
+                </div>
+                <div class="gap"></div>
+            </div>
+        </div>
+        <footer class="main-footer">
+            <div class="container">
+                <div class="row row-col-gap" data-gutter="60">
+                    <div class="col-md-4">
+                        <h4 class="widget-title-sm">See&Buy</h4>
+                        <p> Here where you can find us !</p>
+                        <ul class="main-footer-social-list">
+                            <li>
+                                <a class="fa fa-facebook" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-twitter" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-pinterest" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-instagram" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-google-plus" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="widget-title-sm">Popular Tags</h4>
+                        <ul class="main-footer-tag-list">
+                            <li>
+                                <a href="#">New Season</a>
+                            </li>
+                            <li>
+                                <a href="#">Watches</a>
+                            </li>
+                            <li>
+                                <a href="#">woman</a>
+                            </li>
+                            <li>
+                                <a href="#">classic</a>
+                            </li>
+                            <li>
+                                <a href="#">modern</a>
+                            </li>
+                            <li>
+                                <a href="#">blue</a>
+                            </li>
+                            <li>
+                                <a href="#">shoes</a>
+                            </li>
+                            <li>
+                                <a href="#">running</a>
+                            </li>
+                            <li>
+                                <a href="#">jeans</a>
+                            </li>
+                            <li>
+                                <a href="#">sports</a>
+                            </li>
+                            <li>
+                                <a href="#">laptops</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="widget-title-sm">Newsletter</h4>
+                        <form>
+                            <div class="form-group">
+                                <label>Sign up to the newsletter</label>
+                                <input class="newsletter-input form-control" placeholder="Your e-mail address" type="text" />
+                            </div>
+                            <input class="btn btn-primary" type="submit" value="Sign up" />
+                        </form>
                     </div>
                 </div>
             </div>
-                <div class="gap"></div>
-                 
-        <footer class="main-footer">
-            <div class="container">
-                    <div class="row row-col-gap" data-gutter="60">
-                        <div class="col-md-4">
-                            <h4 class="widget-title-sm">See&Buy</h4>
-                            <p> Here where you can find us !</p>
-                            <ul class="main-footer-social-list">
-                                <li>
-                                    <a class="fa fa-facebook" href="#"></a>
-                                </li>
-                                <li>
-                                    <a class="fa fa-twitter" href="#"></a>
-                                </li>
-                                <li>
-                                    <a class="fa fa-pinterest" href="#"></a>
-                                </li>
-                                <li>
-                                    <a class="fa fa-instagram" href="#"></a>
-                                </li>
-                                <li>
-                                    <a class="fa fa-google-plus" href="#"></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h4 class="widget-title-sm">Popular Tags</h4>
-                            <ul class="main-footer-tag-list">
-                                <li>
-                                    <a href="#">New Season</a>
-                                </li>
-                                <li>
-                                    <a href="#">Watches</a>
-                                </li>
-                                <li>
-                                    <a href="#">woman</a>
-                                </li>
-                                <li>
-                                    <a href="#">classic</a>
-                                </li>
-                                <li>
-                                    <a href="#">modern</a>
-                                </li>
-                                <li>
-                                    <a href="#">blue</a>
-                                </li>
-                                <li>
-                                    <a href="#">shoes</a>
-                                </li>
-                                <li>
-                                    <a href="#">running</a>
-                                </li>
-                                <li>
-                                    <a href="#">jeans</a>
-                                </li>
-                                <li>
-                                    <a href="#">sports</a>
-                                </li>
-                                <li>
-                                    <a href="#">laptops</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h4 class="widget-title-sm">Newsletter</h4>
-                            <form>
-                                <div class="form-group">
-                                    <label>Sign up to the newsletter</label>
-                                    <input class="newsletter-input form-control" placeholder="Your e-mail address" type="text" />
-                                </div>
-                                <input class="btn btn-primary" type="submit" value="Sign up" />
-                            </form>
-                        </div>
-                    </div>
-                </div>
         </footer>
         <div class="copyright-area">
             <div class="container">
@@ -199,27 +192,27 @@
                         <p class="copyright-text">Copyright &copy; <a href="#">See&Buy</a> 2017. Designed by DevStorm team. All rights reseved</p>
                     </div>
                     <div class="col-md-6">
-                                <ul class="payment-icons-list">
-                                    <li>
-                                        <img src="img/payment/visa-straight-32px.png" alt="Image Alternative text" title="Pay with Visa" />
-                                    </li>
-                                    <li>
-                                        <img src="img/payment/mastercard-straight-32px.png" alt="Image Alternative text" title="Pay with Mastercard" />
-                                    </li>
-                                    <li>
-                                        <img src="img/payment/paypal-straight-32px.png" alt="Image Alternative text" title="Pay with Paypal" />
-                                    </li>
-                                    <li>
-                                        <img src="img/payment/visa-electron-straight-32px.png" alt="Image Alternative text" title="Pay with Visa-electron" />
-                                    </li>
-                                    <li>
-                                        <img src="img/payment/maestro-straight-32px.png" alt="Image Alternative text" title="Pay with Maestro" />
-                                    </li>
-                                    <li>
-                                        <img src="img/payment/discover-straight-32px.png" alt="Image Alternative text" title="Pay with Discover" />
-                                    </li>
-                                </ul>
-                            </div>
+                        <ul class="payment-icons-list">
+                            <li>
+                                <img src="img/payment/visa-straight-32px.png" alt="Image Alternative text" title="Pay with Visa" />
+                            </li>
+                            <li>
+                                <img src="img/payment/mastercard-straight-32px.png" alt="Image Alternative text" title="Pay with Mastercard" />
+                            </li>
+                            <li>
+                                <img src="img/payment/paypal-straight-32px.png" alt="Image Alternative text" title="Pay with Paypal" />
+                            </li>
+                            <li>
+                                <img src="img/payment/visa-electron-straight-32px.png" alt="Image Alternative text" title="Pay with Visa-electron" />
+                            </li>
+                            <li>
+                                <img src="img/payment/maestro-straight-32px.png" alt="Image Alternative text" title="Pay with Maestro" />
+                            </li>
+                            <li>
+                                <img src="img/payment/discover-straight-32px.png" alt="Image Alternative text" title="Pay with Discover" />
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,4 +237,5 @@
 
 
 <!-- Mirrored from remtsoy.com/tf_templates/the_box/demo_v1_6/category-layout-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Mar 2017 18:28:21 GMT -->
+
 </html>

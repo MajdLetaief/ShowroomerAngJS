@@ -1,4 +1,6 @@
-<html><!-- Mirrored from remtsoy.com/tf_templates/the_box/demo_v1_6/shopping-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Mar 2017 18:30:39 GMT --><head>
+<html><!-- Mirrored from remtsoy.com/tf_templates/the_box/demo_v1_6/shopping-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Mar 2017 18:30:39 GMT -->
+
+<head>
     <title>Showroomer By DevStorm</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
@@ -42,10 +44,10 @@
                 <div align="center"  ng-show="checkout2">
                     <div class="payment-success-icon fa fa-check-circle-o"></div>
                     <div class="payment-success-title-area">
-                    <h1 class="payment-success-title">{{user.username}}, your payment was successful!</h1>
-                    <p class="lead">Order details has been send to <strong>{{user.username}}@gmail.com</strong>
-                    </p>
-</div>
+                        <h1 class="payment-success-title">{{user.username}}, your payment was successful!</h1>
+                        <p class="lead">Order details has been send to <strong>{{user.username}}@gmail.com</strong>
+                        </p>
+                    </div>
                 </div>
                 <div class="gap gap-small"></div>
                 <div class="row row-col-gap">
@@ -63,9 +65,11 @@
                                 <tbody>
                                     <tr ng-repeat="order in orders">
                                         <td>{{order.product.name}}</td>
-                                        <td>{{order.quantity}}<p hidden="true">{{getTotal()}}</p></td>
+                                        <td>{{order.quantity}}
+                                            <p hidden="true">{{getTotal()}}</p>
+                                        </td>
                                         <td>${{order.quantity*order.product.price}}</td>
-                                    </tr> 
+                                    </tr>
                                     <tr>
                                         <td>Subtotal</td>
                                         <td></td>
@@ -119,7 +123,7 @@
                         <a class="btn btn-primary" ng-click="finalCheckout()" ng-hide="checkout2">Checkout(2/2)</a>
 
                         </div>
-                    </div>    
+                    </div>
                 </div>
                 <div class="gap gap-small"></div>
             </div>
@@ -196,44 +200,44 @@
                             </div>
                             <input class="btn btn-primary" type="submit" value="Sign up" />
                         </form>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </footer>
         <div class="copyright-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="copyright-text">Copyright &copy; <a href="#">See&Buy</a> 2017. Designed by DevStorm team. All rights reseved</p>
-                </div>
-                <div class="col-md-6">
-                    <ul class="payment-icons-list">
-                        <li>
-                            <img src="img/payment/visa-straight-32px.png" alt="Image Alternative text" title="Pay with Visa" />
-                        </li>
-                        <li>
-                            <img src="img/payment/mastercard-straight-32px.png" alt="Image Alternative text" title="Pay with Mastercard" />
-                        </li>
-                        <li>
-                            <img src="img/payment/paypal-straight-32px.png" alt="Image Alternative text" title="Pay with Paypal" />
-                        </li>
-                        <li>
-                            <img src="img/payment/visa-electron-straight-32px.png" alt="Image Alternative text" title="Pay with Visa-electron" />
-                        </li>
-                        <li>
-                            <img src="img/payment/maestro-straight-32px.png" alt="Image Alternative text" title="Pay with Maestro" />
-                        </li>
-                        <li>
-                            <img src="img/payment/discover-straight-32px.png" alt="Image Alternative text" title="Pay with Discover" />
-                        </li>
-                    </ul>
-      
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright-text">Copyright &copy; <a href="#">See&Buy</a> 2017. Designed by DevStorm team. All rights reseved</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="payment-icons-list">
+                            <li>
+                                <img src="img/payment/visa-straight-32px.png" alt="Image Alternative text" title="Pay with Visa" />
+                            </li>
+                            <li>
+                                <img src="img/payment/mastercard-straight-32px.png" alt="Image Alternative text" title="Pay with Mastercard" />
+                            </li>
+                            <li>
+                                <img src="img/payment/paypal-straight-32px.png" alt="Image Alternative text" title="Pay with Paypal" />
+                            </li>
+                            <li>
+                                <img src="img/payment/visa-electron-straight-32px.png" alt="Image Alternative text" title="Pay with Visa-electron" />
+                            </li>
+                            <li>
+                                <img src="img/payment/maestro-straight-32px.png" alt="Image Alternative text" title="Pay with Maestro" />
+                            </li>
+                            <li>
+                                <img src="img/payment/discover-straight-32px.png" alt="Image Alternative text" title="Pay with Discover" />
+                            </li>
+                        </ul>
+
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
-    
-      </div>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/icheck.js"></script>
@@ -252,6 +256,6 @@
 
 
 
-<!-- Mirrored from remtsoy.com/tf_templates/the_box/demo_v1_6/shopping-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Mar 2017 18:30:40 GMT -->
+    <!-- Mirrored from remtsoy.com/tf_templates/the_box/demo_v1_6/shopping-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Mar 2017 18:30:40 GMT -->
 
 </body></html>
