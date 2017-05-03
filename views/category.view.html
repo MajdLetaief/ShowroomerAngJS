@@ -4,9 +4,6 @@
 
 <!-- Mirrored from remtsoy.com/tf_templates/the_box/demo_v1_6/category-layout-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Mar 2017 18:28:15 GMT -->
 <head>
-    
-    
-    <link rel="shortcut icon" href="img/DevStorm.ico" />
     <title>Showroomer By DevStorm</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
@@ -45,10 +42,10 @@
 <body ng-app="showroomer" ng-controller="SearchController">
     <div class="global-wrapper clearfix" id="global-wrapper">
         <ng-include src="'./views/layouts/nav.view.html'"></ng-include>
-        <header class="page-header page-header-banner" style="background-image:url(img/music.jpg);">
+        <header class="page-header page-header-banner" style="background-image:url(img/{{category}}.jpg);">
             <div class="container">
                 <div class="page-header-banner-inner">
-                    <h1 class="page-title">Music</h1>
+                    <h1 class="page-title">{{category}}</h1>
                 </div>
             </div>
         </header>
@@ -67,21 +64,17 @@
                             <h3 class="widget-title-sm">Other categories</h3>
                             <ul class="cateogry-filters-list">
                                 
-                                <li><a href="#">Unisex Clothes, Shoes &amp; Accs</a>
+                                <li><a href="index.html#/category/Technologies">Technologies</a>
                                 </li>
-                                <li><a href="#">Kids Clothes, Shoes &amp; Accs</a>
+                                <li><a href="index.html#/category/Sports">Sports</a>
                                 </li>
-                                <li><a href="#">Woman's Clothing</a>
+                                <li><a href="index.html#/category/Music">Music</a>
                                 </li>
-                                <li><a href="#">Fitness, Running &amp; Yoga</a>
+                                <li><a href="index.html#/category/Clothes">Clothes</a>
                                 </li>
-                                <li><a href="#">Team Sports</a>
+                                <li><a href="index.html#/category/Tools">Tools</a>
                                 </li>
-                                <li><a href="#">Outdoor Sports</a>
-                                </li>
-                                <li><a href="#">Cycling</a>
-                                </li>
-                                <li><a href="#">Water Sports</a>
+                                <li><a href="index.html#/category/Accessories">Accessories</a>
                                 </li>
                             </ul>
                         </div>
@@ -89,7 +82,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="row" data-gutter="15">
-                        <div class="col-md-4" ng-repeat="p in products | filter : search" >
+                        <div class="col-md-4" ng-repeat="p in products | filter : search | filter : category" >
                             <div class="product ">
                                 <ul class="product-labels">
                                     <li>{{p.discount}}%</li>
@@ -123,8 +116,7 @@
                 </div>
             </div>
                 <div class="gap"></div>
-            </div>
-        </div>
+                 
         <footer class="main-footer">
             <div class="container">
                     <div class="row row-col-gap" data-gutter="60">
