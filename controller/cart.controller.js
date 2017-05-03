@@ -1,4 +1,5 @@
 function CartControllerFN($scope, $http, $routeParams, $location) {
+$scope.checkout2=false;
     $scope.getTotal = function () {
         $scope.total = 0;
         for (var i = 0; i < $scope.orders.length; i++) {
@@ -7,7 +8,7 @@ function CartControllerFN($scope, $http, $routeParams, $location) {
         }
         return $scope.total;
     }
-var x= "0";
+    var x = "0";
     $http.get("https://showroomercore.mybluemix.net/api/order/getorder", {
             headers: {
                 "id": 1
@@ -15,7 +16,7 @@ var x= "0";
         })
         .then(function (response) {
             $scope.orders = response.data;
-        x=$scope.orders[0].purchaseId;
+            x = $scope.orders[0].purchaseId;
             $http.get("https://showroomercore.mybluemix.net/api/buyer/getuser", {
                 headers: {
                     "id": $scope.orders[0].userId
@@ -25,15 +26,14 @@ var x= "0";
             })
         })
 
-    $scope.deleteorder = function (input) {
+    $scope.deleteorder = function (input, $index) {
         $http.delete("https://showroomercore.mybluemix.net/api/order", {
                 headers: {
                     "id": input
                 }
             })
             .then(function (response) {
-                $scope.orders = response.data;
-                console.log($scope.orders);
+                $scope.orders.splice($index, 1);
             })
     }
     $scope.clearall = function () {
@@ -47,15 +47,25 @@ var x= "0";
         })
     }
     $scope.checkout = function () {
-        console.log(x);
-        $http.put("https://showroomercore.mybluemix.net/api/order/checkout", {
-            headers: {
-                "id": x
-            }
-        }).success(function (response) {
-            $location.path('/checkout');
-        })
+        if (confirm("Become showroomer?")) {
+            alert("deleted" );
+        } else {
+           
+                $location.path('/checkout');
+        }
+
     }
-    
+    $scope.finalCheckout=function(){
+        console.log(x);
+            var data ={};
+            $http.put("https://showroomercore.mybluemix.net/api/order/checkout",data, {
+                headers: {
+                    "id": x
+                }
+            }).success(function (response) {
+                $scope.checkout2=true;
+            })
+    }
+
 }
 app.controller("CartController", CartControllerFN);

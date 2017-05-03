@@ -39,7 +39,7 @@
         <br>
         <div class="container">
             <div class="box-highlight">
-                <div align="center">
+                <div align="center"  ng-show="checkout2">
                     <div class="payment-success-icon fa fa-check-circle-o"></div>
                     <div class="payment-success-title-area">
                     <h1 class="payment-success-title">{{user.username}}, your payment was successful!</h1>
@@ -114,7 +114,10 @@
                                     </tr>
 
                                 </tbody>
+                                
                             </table>
+                        <a class="btn btn-primary" ng-click="finalCheckout()" ng-hide="checkout2">Checkout(2/2)</a>
+
                         </div>
                     </div>    
                 </div>
